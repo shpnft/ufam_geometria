@@ -1,4 +1,4 @@
-\begin{frame}
+\begin{frame} % Capa
     \titlepage
 \end{frame}
 
@@ -17,11 +17,11 @@
         \item Produto interno, produto vetorial e produto misto
         \item Equação vetorial de uma reta
         \item Equação do plano
-        \item Distância entre ponto e plano, entre reta e plano e entre planos 
+        \item Distância entre ponto e plano, entre reta e plano e entre planos
         \item Interpretação geométrica de sistemas de equações lineares com duas incógnitas
         \item Sistemas equações lineares e seu significado geométrico
         \item Equações reduzidas da elipse, hipérbole e parábola
-        \item Quádricas 
+        \item Quádricas
     \end{itemize}
 \end{frame}
 
@@ -45,22 +45,22 @@
 \begin{frame}{Livro Texto}
    \begin{center}
        \includegraphics[height=0.8\textheight]{images/livro-texto}
-   \end{center} 
+   \end{center}
 \end{frame}
 
 \begin{frame}{Geometria plana}
     \begin{itemize}
         \item Ponto
-        \item Reta        
+        \item Reta
             \begin{itemize}
                 \item Segmento de reta
             \end{itemize}
         \item Plano
-        \item Polígonos 
+        \item Polígonos
             \begin{itemize}
                 \item Triângulos
                 \item Quadriláteros (quadrado, paralelogramo, losango)
-                \item Pentágonos, hexágonos etc 
+                \item Pentágonos, hexágonos etc
                 \item<2> Perímetro e área
             \end{itemize}
         \item Círculo
@@ -75,7 +75,7 @@
 
 \begin{frame}{Nomenclatura e notação}
     \begin{itemize}[<+->]
-        \item Dois pontos distintos \(A\) e \(B\) do espaço determinam uma reta \(r\) 
+        \item Dois pontos distintos \(A\) e \(B\) do espaço determinam uma reta \(r\)
         \item O segmento de reta entre \(A\) e \(B\) é a parte da reta compreendida entre esses dois pontos
         \item O \textbf{segmento orientado} com origem \(A\) e extremidade \(B\) será indicado por \((A,B)\)
         \item Vamos considerar os pontos como segmentos orientados sem ''tamanho'' (nulos)
@@ -85,7 +85,7 @@
                 \item forem ambos nulos ou
                 \item tiverem a mesma direção, mesmo comprimento e mesmo sentido
             \end{itemize}
-        \item Indica-se a equipolência entre \((A,B)\) e \((A',B')\) por 
+        \item Indica-se a equipolência entre \((A,B)\) e \((A',B')\) por
             \[
                 (A,B) \sim (A',B')
             \]
@@ -94,18 +94,18 @@
 
 \begin{frame}{Vetores}
     \begin{itemize}
-        \item<+-> O \textbf{vetor} determinado por um segmento orientado \((A,B)\) é o conjunto de todos os segmentos orientados 
+        \item<+-> O \textbf{vetor} determinado por um segmento orientado \((A,B)\) é o conjunto de todos os segmentos orientados
             do espaço que são \textbf{equipolentes} ao segmento orientado \((A,B)\)
         \item<.-> O vetor determinado por \((A,B)\) pode ser indicado por \(\vec{AB}\) ou por uma letra minúscula quando não se
             quer destacar um representante (por exemplo, \(\vec{a}\))
-        \item<+-> Note que \((A,B)\) não é a mesma coisa de \(\vec{AB}\): um vetor pode ser representado por uma infinidade 
+        \item<+-> Note que \((A,B)\) não é a mesma coisa de \(\vec{AB}\): um vetor pode ser representado por uma infinidade
             de segmentos orientados distintos
         \item<.-> Se \((A,B) \sim (A',B')\), então \(\vec{AB} = \vec{A'B'}\) mesmo que \((A,B) \neq (A',B')\)
-        \item<+-> \textbf{Vetor nulo} é um vetor que tem como representante um  segmento orientado nulo e 
+        \item<+-> \textbf{Vetor nulo} é um vetor que tem como representante um  segmento orientado nulo e
             é representado por \(\vec{0}\)
-        \item<.-> Se \((A,B)\) representa \(\vec{a}\), o \textbf{vetor oposto} \(-\vec{a}\) pode ser representado pelo 
+        \item<.-> Se \((A,B)\) representa \(\vec{a}\), o \textbf{vetor oposto} \(-\vec{a}\) pode ser representado pelo
             segmento orientado \((B,A)\)
-        \item<+-> \textbf{Norma} ou \textbf{módulo} de um vetor \(\vec{u}\), \(||\vec{u}||\), é o comprimento de qualquer um dos 
+        \item<+-> \textbf{Norma} ou \textbf{módulo} de um vetor \(\vec{u}\), \(||\vec{u}||\), é o comprimento de qualquer um dos
             seus representantes. Um vetor é \textbf{unitário} se sua norma é 1
     \end{itemize}
 \end{frame}
@@ -119,7 +119,7 @@
     \]
     \begin{center}
         \begin{tikzpicture}[scale=1]
-            \draw [red,thick,-stealth] (0,0) node[left] {A} -- (2,0) node [right] {B}; 
+            \draw [red,thick,-stealth] (0,0) node[left] {A} -- (2,0) node [right] {B};
             \draw [fill, red] (0,0) circle (1 pt);
             \draw [fill, red] (2,0) circle (1 pt);
             \draw [fill, red] (1,2) circle (1 pt);
@@ -132,10 +132,10 @@
 
     \onslide<2-> {
         \begin{itemize}
-            \item Para determinar o vetor \(\vec{x}=\vec{u}+\vec{v}+\vec{w}+\ldots\), tomam-se representantes consecutivos 
-                (a origem de cada um coincidindo com a extremidade do anterior) e ''fecha-se o polígono''
-            \item Se os representantes dos vetores a serem somados não forem consecutivos, basta encontrar 
+            \item Se os representantes dos vetores a serem somados não forem consecutivos, basta encontrar
                 outros representantes
+            \item Para determinar o vetor \(\vec{x}=\vec{u}+\vec{v}+\vec{w}+\ldots\), tomam-se representantes consecutivos
+                (a origem de cada um coincidindo com a extremidade do anterior) e ''fecha-se o polígono''
         \end{itemize}
     }
 \end{frame}
@@ -144,13 +144,13 @@
 
     Sejam \(\vec{u}\), \(\vec{v}\) e \(\vec{w}\) vetores quaisquer. Valem as propriedades básicas:
 
-    \begin{itemize}
+    \begin{enumerate}
         \item \textbf{Propriedade associativa}:
             \((\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})\)
         \item \textbf{Propriedade comutativa}: \(\vec{u}+\vec{v}=\vec{v}+\vec{u}\)
         \item \textbf{Elemento neutro}: \(\vec{u}+\vec{0}=\vec{u}\)
         \item \textbf{Elemento oposto}: \(\vec{u}+(-\vec{u})=\vec{0}\)
-    \end{itemize}
+    \end{enumerate}
     \pause
     A partir dessas propriedades básicas, podemos obter diversas propriedades derivadas, como por exemplo:
     \begin{itemize}
@@ -163,3 +163,249 @@
 \end{frame}
 
 \input{aulas/soma_de_vetores}
+
+\begin{frame}{Produto de número real por vetor}
+    Sejam \(\alpha\) um número real e \(\vec{v}\) um vetor:
+
+    \begin{enumerate}
+        \item Se \(\alpha =0 \) ou \(\vec{v}=\vec{0}\), então \(\alpha \vec{v}=\vec{0}\)
+        \item Se \(\alpha \neq 0 \) e \(\vec{v} \neq \vec{0}\), então:
+            \begin{enumerate}
+                \item \(\alpha\vec{v}\) é paralelo a \(\vec{v}\), que pode ser escrito como
+                    \(\alpha\vec{v} // \vec{v}\)
+                \item \(\alpha\vec{v}\) e \(\vec{v}\) têm o mesmo sentido se \(\alpha > 0\)
+                \item  \(\alpha\vec{v}\) e \(\vec{v}\) têm o sentidos opostos se \(\alpha < 0\)
+                \item \(||\alpha\vec{v}||=|\alpha| ||\vec{v}||\) (o módulo do vetor \(\alpha\vec{v}\) é igual ao módulo do número real \(\alpha\) multiplicado pelo módulo do vetor \(\vec{v}\))
+            \end{enumerate}
+    \end{enumerate}
+
+    \vspace{1cm}
+
+    \textit{Observação}: O módulo de um vetor é o "tamanho" desse vetor e, portanto, não pode ser negativo. Dizer que o módulo de um
+    vetor é um número negativo pode causar a destruição do universo conhecido!
+\end{frame}
+
+\begin{frame}[c]{Algumas coisinhas...}
+
+    \begin{itemize}
+        \item É comum usar o termo \textbf{escalar} para designar um número real em problemas envolvendo vetores (é \textit{chique})
+        \item \(\frac{\vec{v}}{\beta}\) ou \(\vec{v}/\beta\) é a mesma coisa que \(\frac{1}{\beta}\vec{v}\)
+        \item O vetor unitário \(\frac{\vec{v}}{||\vec{v}||}\) é chamado \textbf{versor} de \(\vec{v}\)
+        \item Não se pode usar um vetor como denominador, o seja
+            \begin{center}
+                \begin{tikzpicture}
+                    \node (equation) {\(\vec{u}=2 \vec{v} \implies \frac{ \vec{u} } { \vec{v} } = 2\) };
+                    \onslide<2->{
+                    \draw [red] (equation.north west) rectangle (equation.south east) -- (equation.north west);
+                    \draw [red] (equation.south west) -- (equation.north east);
+                }
+                \end{tikzpicture}
+            \end{center}
+            \onslide<2->{\textbf{é extremamente errado}}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Propriedades básicas}
+
+    Quaisquer que sejam os escalares \(\alpha\) e \(\beta\) e quaisquer que sejam os vetores \(\vec{u}\), \(\vec{v}\) e \(\vec{w}\),
+    valem as igualdades:
+
+    \begin{enumerate}
+        \item \(\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}\)
+        \item \((\alpha+\beta)\vec{v}=\alpha\vec{v}+\beta\vec{v}\)
+        \item \(1\vec{v}=\vec{v}\)
+        \item \(\alpha(\beta\vec{v})=(\alpha\beta)\vec{v}=\beta(\alpha\vec{v})\)
+    \end{enumerate}
+
+    \pause
+    A partir dessas propriedades básicas, podemos obter diversas propriedades derivadas, como por exemplo:
+    \begin{itemize}
+        \item \( \vec{v}+\vec{v}=2\vec{v}\)
+        \item se \(\alpha \neq 0\), então \(\alpha\vec{v}=\vec{w} \Rightarrow \vec{v}=\vec{w}/\alpha\)
+        \item \(\vec{a}=2\vec{b}+\vec{c} \Rightarrow \vec{b}=(\vec{a}-\vec{c})/2\)
+        \item \(\alpha\vec{v}=\vec{0} \Rightarrow \alpha = 0 \text{ ou } \vec{v}=\vec{0}\)
+        \item se \(\vec{v} \neq \vec{0}\), então \(\alpha\vec{v}=\beta\vec{v} \Rightarrow \alpha=\beta\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ninguém perguntou, mas...}
+    \begin{tcolorbox}[colback=red!10]
+        Propriedades básicas da soma de vetores
+        \begin{enumerate}
+            \item \textbf{Propriedade associativa}:
+                \((\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})\)
+            \item \textbf{Propriedade comutativa}: \(\vec{u}+\vec{v}=\vec{v}+\vec{u}\)
+            \item \textbf{Elemento neutro}: \(\vec{u}+\vec{0}=\vec{u}\)
+            \item \textbf{Elemento oposto}: \(\vec{u}+(-\vec{u})=\vec{0}\)
+        \end{enumerate}
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback=blue!10]
+        Propriedades básicas da multiplicação de um vetor por um escalar
+        \begin{enumerate}
+            \item \(\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}\)
+            \item \((\alpha+\beta)\vec{v}=\alpha\vec{v}+\beta\vec{v}\)
+            \item \(1\vec{v}=\vec{v}\)
+            \item \(\alpha(\beta\vec{v})=(\alpha\beta)\vec{v}=\beta(\alpha\vec{v})\)
+        \end{enumerate}
+    \end{tcolorbox}
+        Um conjunto com essas propriedades básicas, por exemplo matrizes e polinômios, formam um \textbf{espaço vetorial} que é
+        basicamente o assunto mais tratado na disciplina Álgebra Linear
+\end{frame}
+
+\begin{frame}{Exercícios}
+    \begin{itemize}
+        \item[3-10] Resolva, na incógnita \(\vec{x}\), a equação \(2 \vec{x}-3 \vec{u}=10 ( \vec{x} + \vec{v}) \)
+        \item[3-11] Resolva os sistemas nas incógnitas \(\vec{x}\) e \(\vec{y}\)
+            \begin{columns}
+                \begin{column}{0.4\textwidth}
+                    \[
+                        \text{(a) } \begin{cases}
+                            \vec{x}+2 \vec{y}= \vec{u} \\
+                            3 \vec{x} - \vec{y} = 2 \vec{u} + \vec{v}
+                        \end{cases}
+                    \]
+                \end{column}
+
+                \begin{column}{0.4\textwidth}
+                    \[
+                        \text{(b) } \begin{cases}
+                            \vec{x} + \vec{y}= \vec{u}- 2\vec{v} \\
+                            \vec{x}- \vec{y} = 3 \vec{u}
+                        \end{cases}
+                    \]
+                \end{column}
+            \end{columns}
+
+        \item[3-12] Resolva o sistema nas incógnitas \(\vec{x}\), \(\vec{y}\) e \(\vec{z}\)
+            \[
+                \begin{cases}
+                    \vec{x}+ \vec{y} - \vec{z} = \vec{u} + \vec{v} \\
+                    \vec{x} - \vec{y} + \vec{z} = \vec{u} - \vec{v} \\
+                    -\vec{x} + \vec{y} + \vec{z} = \vec{0}
+                \end{cases}
+            \]
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}[fragile]{Vim motion}
+%     \centering
+%     \begin{tikzpicture}
+%         \matrix (m) [matrix of nodes, nodes={align=center, text width=13ex, minimum height=1.4cm, anchor = center,
+%         fill=blue!20},
+%         every even column/.style = {nodes={fill=red!20}},
+%         every even row/.style = {nodes={fill=red!20}},
+%         ] {
+%             {\textbf{H} \\ start of file} & & & & & \\
+%             {\textbf{k} \\ up} & & & & & \\
+%             {\textbf{0} \\ start of line} & {\textbf{b} \\ previous word} &
+%             {\textbf{h} \\ left} & {\textbf{l} \\ right} & {\textbf{w} \\ next word} & {\textbf{\$} \\ end of line} \\
+%             {\textbf{j} \\ down} & & & & & \\
+%             {\textbf{G} \\ end of file} & & & & & \\
+%         };
+%     \end{tikzpicture}
+% \end{frame}
+
+\begin{frame}{Capítulos do livro texto}
+    \begin{itemize}
+        \item Capítulo 1: Vetor \textcolor{blue}{JÁ VIMOS}
+        \item Capítulo 2: Soma de vetores \textcolor{blue}{JÁ VIMOS}
+        \item Capítulo 3: Produto de um número real por vetor \textcolor{blue}{JÁ VIMOS}
+        \item Capítulo 4: Soma de ponto com vetor
+            \begin{itemize}
+                \item Definimos a soma do ponto \(P\) ao vetor \(\vec{u}\) como
+                    \[
+                        Q=P+\vec{u} \Longleftrightarrow \vec{PQ}=\vec{u}
+                    \]
+            \end{itemize}
+        \item Capítulo 5: Aplicações geométricas \textcolor{red}{NÃO VEREMOS}
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dependência linear}
+    \begin{itemize}
+        \item Dizemos que \((\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n})\) é uma \textbf{sequência} ou \textit{n-upla}
+            ordenada  de vetores se:
+            \[
+                (\vec{u_1}, \vec{u_2}, \ldots, \vec{u_n}) = (\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n})
+                \Longleftrightarrow \vec{u_1}=\vec{v_1}, \vec{u_2}=\vec{v_2}, \ldots, \vec{u_n}=\vec{v_n}
+            \]
+            \pause
+        \item \((\vec{v})\) é \textbf{linearmente dependente} se \(\vec{v}=\vec{0}\)
+        \item \((\vec{u}, \vec{v})\) é \textbf{linearmente dependente} se \(\vec{u}\) e \(\vec{v}\) são paralelos
+        \item \((\vec{u}, \vec{v}, \vec{w})\) é  \textbf{linearmente dependente} se \(\vec{u}\), \(\vec{v}\) e \(\vec{w}\) são paralelos a um mesmo plano
+        \item \((\vec{u}, \vec{v}, \vec{w}, \vec{t})\) é sempre \textbf{linearmente dependente}
+            \pause
+        \item Se uma sequência não é linearmente dependente, ela é \textbf{linearmente independente}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Combinação linear}
+    \begin{itemize}
+        \item Se \(\vec{u}=\alpha_1 \vec{v_1} +\alpha_2 \vec{v_2} + \ldots +\alpha_n \vec{v_n}\), então
+            \(\vec{u}\) é \textbf{combinação linear} de \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}\)
+            \pause
+        \item \((\vec{v_1},\ldots,\vec{v_n})\) é LI se, e somente se, a equação
+            \[
+                \alpha_1 \vec{v_1}+\ldots+\alpha_n \vec{v_n}=0
+            \]
+            admite apenas a solução nula: \(\alpha_1=\ldots=\alpha_n=0\)
+    \end{itemize}
+
+    \pause
+    Assim:
+    \begin{enumerate}
+        \item \((\vec{u}, \vec{v})\) é LD, então \(\vec{u} // \vec{v}\)
+        \item \((\vec{u}, \vec{v})\) é LI, então \((\vec{u}, \vec{v}, \vec{w})\) é LD se, e somente se, \(\vec{w}\) é combinação linear de \(\vec{u}\) e \(\vec{v}\)
+        \item \((\vec{u}, \vec{v}, \vec{w})\) é LD se, e somente se, um dos vetores é combinação linear dos outros dois
+        \item \((\vec{u}, \vec{v}, \vec{w})\) é LI, então \textit{qualquer} vetor \(\vec{x}\) é combinação linear de \(\vec{u}, \vec{v} \text{ e } \vec{w}\)
+            \pause
+        \item \((\vec{v_1},\ldots, \vec{v_n})\) é LI, então para
+            \[
+                \vec{x} = \alpha_1 \vec{v_1}+\ldots+\alpha_n \vec{v_n}
+            \]
+            os coeficientes \(\alpha_1\), \(\ldots\), \(\alpha_n\) são \textbf{univocamente} determinados
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Atividade}
+    Determine \(m\) para que \(X=O+m(\vec{OA}/3-\vec{OB}+\vec{OC}/2)\) pertença ao plano \(ABC\) do tetraedro \((OABC)\)
+
+    \centering
+    \begin{tikzpicture}[scale=1.6]
+        \coordinate (A) at (0.6,0.95);
+        \coordinate (B) at (2.75,0.4);
+        \coordinate (C) at (3.8,1.09);
+        \coordinate (O) at (2.35, 3.6);
+        \draw [thick] (O) -- (A);
+        \filldraw [gray!20] (A) -- (B) -- (C) -- cycle;
+        \draw [thick] (A) -- (B) -- (C);
+        \draw [very thick, dotted] (A) -- (C);
+        \draw [thick] (O) -- (B);
+        \draw [thick] (O) -- (C);
+        \node [above]  at (O) {O};
+        \node [below]  at (B) {B};
+        \node [left]   at (A) {A};
+        \node [right]  at (C) {C};
+        % \node at (2.3, 0.75) {\(X\)};
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Resolução}
+    \begin{align*}
+        & X  = O+m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
+        & \vec{OX} = m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
+        & \alpha\vec{AX}+\beta\vec{AB}+\gamma\vec{AC}=\vec{0} \\
+        & \vec{AX} = \vec{AO} + \vec{OX} \\
+        & \vec{AX} = \vec{AO} + m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
+        & \vec{AX} = -\vec{OA} + m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
+        & \vec{AX} = (m/3-1)~ \vec{OA}-m~ \vec{OB} + m/2~ \vec{OC} \\
+        & \vec{AB} = -\vec{OA}+\vec{OB} \\
+        & \vec{AC} = -\vec{OA}+\vec{OC}
+    \end{align*}
+\end{frame}
+
+
+

@@ -10,6 +10,11 @@
 
 \renewcommand{\vec}[1]{\overrightarrow{#1}}
 
+\usepackage{tcolorbox}
+\tcbset{boxrule=0pt, frame empty, top=0pt, bottom=0pt}
+
+% \usetikzlibrary{shapes}
+
 \begin{document}
 
 \include{aulas/parte01}
@@ -23,7 +28,7 @@
 %        \coordinate (E) at ($(A)+(0,2,0)$);
 %        \coordinate (F) at ($(B)+(0,2,0)$);
 %        \coordinate (G) at ($(C)+(0,2,0)$);
-%        \coordinate (H) at ($(D)+(0,2,0)$);   
+%        \coordinate (H) at ($(D)+(0,2,0)$);
 %
 %        \draw [thick] (A) -- (B) -- (C) -- (D) -- cycle;
 %        \draw [thick] (E) -- (F) -- (G) -- (H) -- cycle;
@@ -39,7 +44,7 @@
 %
 %        \draw[red,thick,->] (A) -- (B);
 %        \draw[red,thick,->] (A) -- (C);
-%        \draw[red,thick,->] (A) -- (F);    
+%        \draw[red,thick,->] (A) -- (F);
 %    \end{tikzpicture}
 %\end{center}
 
