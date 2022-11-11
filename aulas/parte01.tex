@@ -1,3 +1,5 @@
+\section{Apresentação}
+
 \begin{frame} % Capa
     \titlepage
 \end{frame}
@@ -72,6 +74,8 @@
             \end{itemize}
     \end{itemize}
 \end{frame}
+
+\section{Vetores}
 
 \begin{frame}{Nomenclatura e notação}
     \begin{itemize}[<+->]
@@ -323,6 +327,8 @@
     \end{itemize}
 \end{frame}
 
+\section{Base}
+
 \begin{frame}{Dependência linear}
     \begin{itemize}
         \item Dizemos que \((\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n})\) é uma \textbf{sequência} ou \textit{n-upla}
@@ -346,32 +352,65 @@
     \begin{itemize}
         \item Se \(\vec{u}=\alpha_1 \vec{v_1} +\alpha_2 \vec{v_2} + \ldots +\alpha_n \vec{v_n}\), então
             \(\vec{u}\) é \textbf{combinação linear} de \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}\)
-            \pause
-        \item \((\vec{v_1},\ldots,\vec{v_n})\) é LI se, e somente se, a equação
-            \[
-                \alpha_1 \vec{v_1}+\ldots+\alpha_n \vec{v_n}=0
-            \]
-            admite apenas a solução nula: \(\alpha_1=\ldots=\alpha_n=0\)
     \end{itemize}
 
-    \pause
-    Assim:
-    \begin{enumerate}
-        \item \((\vec{u}, \vec{v})\) é LD, então \(\vec{u} // \vec{v}\)
-        \item \((\vec{u}, \vec{v})\) é LI, então \((\vec{u}, \vec{v}, \vec{w})\) é LD se, e somente se, \(\vec{w}\) é combinação linear de \(\vec{u}\) e \(\vec{v}\)
-        \item \((\vec{u}, \vec{v}, \vec{w})\) é LD se, e somente se, um dos vetores é combinação linear dos outros dois
-        \item \((\vec{u}, \vec{v}, \vec{w})\) é LI, então \textit{qualquer} vetor \(\vec{x}\) é combinação linear de \(\vec{u}, \vec{v} \text{ e } \vec{w}\)
-            \pause
-        \item \((\vec{v_1},\ldots, \vec{v_n})\) é LI, então para
-            \[
-                \vec{x} = \alpha_1 \vec{v_1}+\ldots+\alpha_n \vec{v_n}
-            \]
-            os coeficientes \(\alpha_1\), \(\ldots\), \(\alpha_n\) são \textbf{univocamente} determinados
-    \end{enumerate}
+   \vspace{0.5cm}
+    \begin{tcolorbox}[colback=red!10, center title, title= \textit{Teoremas demonstrados no livro texto}]
+
+        \begin{enumerate}
+            \item \((\vec{v_1},\ldots,\vec{v_n})\) é LI se, e somente se, a equação
+                \[
+                    \alpha_1 \vec{v_1}+\ldots+\alpha_n \vec{v_n}=0
+                \]
+                admite apenas a solução nula: \(\alpha_1=\ldots=\alpha_n=0\)
+            \item \((\vec{u}, \vec{v}, \vec{w})\) é LI, então \textit{qualquer} vetor \(\vec{x}\) é combinação linear de \(\vec{u}, \vec{v} \text{ e } \vec{w}\)
+            \item \((\vec{v_1},\ldots, \vec{v_n})\) é LI, então para
+                \[
+                    \vec{x} = \alpha_1 \vec{v_1}+\ldots+\alpha_n \vec{v_n}
+                \]
+                os coeficientes \(\alpha_1\), \(\ldots\), \(\alpha_n\) são \textbf{univocamente} determinados
+        \end{enumerate}
+    \end{tcolorbox}
 \end{frame}
 
-\begin{frame}{Atividade}
-    Determine \(m\) para que \(X=O+m(\vec{OA}/3-\vec{OB}+\vec{OC}/2)\) pertença ao plano \(ABC\) do tetraedro \((OABC)\)
+\begin{frame}{Exemplo 1}
+    No triângulo \(ABC\), \(M\) é o ponto médio de \(AB\) e \(N\) pertence ao lado \(AC\). Sabendo que \(MN\)
+    é paralelo a \(BC\), prove que \(N\) é o ponto médio de \(AC\).
+    \begin{center}
+        \begin{tikzpicture}[scale=3/4]
+            \coordinate (A) at (2,2);
+            \coordinate (B) at (0,0);
+            \coordinate (C) at (5,0);
+            \draw [thick] (A) -- (B) -- (C) -- cycle;
+            \node [above] at (A) {A};
+            \node [left] at (B) {B};
+            \node [right] at (C) {C};
+            \draw [red] ($(A)!0.5!(B)$) node [above left] {M} -- ($(A)!0.5!(C)$) node [above right] {N};
+        \end{tikzpicture}
+    \end{center}
+    \pause
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \begin{gather*}
+                \vec{AM} = \frac{1}{2} \vec{AB} \\
+                \vec{MN} = \alpha \vec{BC} \\
+                \vec{AN} = \vec{AM} + \vec{MN} \\
+                \vec{AN} = \beta \vec{AC} = \beta \vec{AB} + \beta \vec{BC}
+            \end{gather*}
+        \end{column}
+        \pause
+        \begin{column}{0.5\textwidth}
+            \[
+                \vec{AN} = \frac{1}{2} \vec{AB} + \alpha \vec{BC} = \beta \vec{AB} + \beta \vec{BC}
+            \]
+            Como \((\vec{AB},\vec{BC})\) é LI, temos que \(\beta = 1/2\)
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Exemplo 2}
+    Determine \(m\) para que \(X=A+m(\vec{AD}/3-\vec{AB}+\vec{AC}/2)\) pertença ao plano \(BCD\) do tetraedro \((ABCD)\)
 
     \centering
     \begin{tikzpicture}[scale=1.6]
@@ -385,27 +424,142 @@
         \draw [very thick, dotted] (A) -- (C);
         \draw [thick] (O) -- (B);
         \draw [thick] (O) -- (C);
-        \node [above]  at (O) {O};
+        \node [above]  at (O) {A};
         \node [below]  at (B) {B};
-        \node [left]   at (A) {A};
+        \node [left]   at (A) {D};
         \node [right]  at (C) {C};
-        % \node at (2.3, 0.75) {\(X\)};
+        % \filldraw [red] ($(B)!0.5!(A)$) circle (1pt);
+        % \filldraw [red] ($(A)!0.5!(C)$) circle (1pt);
+        % \filldraw [red] ($(O)!0.5!(C)$) circle (1pt);
     \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Resolução}
-    \begin{align*}
-        & X  = O+m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
-        & \vec{OX} = m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
-        & \alpha\vec{AX}+\beta\vec{AB}+\gamma\vec{AC}=\vec{0} \\
-        & \vec{AX} = \vec{AO} + \vec{OX} \\
-        & \vec{AX} = \vec{AO} + m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
-        & \vec{AX} = -\vec{OA} + m(\vec{OA}/3-\vec{OB}+\vec{OC}/2) \\
-        & \vec{AX} = (m/3-1)~ \vec{OA}-m~ \vec{OB} + m/2~ \vec{OC} \\
-        & \vec{AB} = -\vec{OA}+\vec{OB} \\
-        & \vec{AC} = -\vec{OA}+\vec{OC}
-    \end{align*}
+% \begin{frame}{Solução}
+%     \begin{enumerate}
+%         \item Escrever \(\vec{AX}\) como uma combinação linear de \(\vec{AD}\), \(\vec{AB}\) e \(\vec{AC}\)
+%         \item \label{xpo} Com os pontos do tetraedro pertencentes ao plano, montar 2 vetores LI
+%         \item \label{ddo} Com o ponto \(X\) e um dos pontos do tetraedro pertencentes ao plano, montar um vetor e
+%             escrevê-lo em uma combinação linear com os 2 vetores encontrados no passo \ref{xpo} igual a zero
+%         \item \label{xpl} Escrever o vetor obtido no passo \ref{ddo} como uma combinação linear de \(\vec{AD}\), \(\vec{AB}\) e \(\vec{AC}\)
+%         \item \label{ttl} Escrever os vetores obtidos no passo \ref{xpo} como uma combinação linear de \(\vec{AD}\), \(\vec{AB}\) e \(\vec{AC}\)
+%         \item Reescrever a combinação linear obtida no passo \ref{ddo} usando os resultados obtidos nos passos \ref{xpl} e \ref{ttl}
+%         \item Verificar para qual valor de \(m\) temos uma solução não nula para os coeficientes da combinação linear obtida em \ref{ddo}
+%     \end{enumerate}
+% \end{frame}
+
+
+
+\begin{frame}{Exemplo 3}
+    \only<1-2>{
+        No tetraedro \(ABCD\), figura anterior, sejam \(M\), \(N\) e \(P\), respectivamente,
+        os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo \(MNP\).
+        \begin{itemize}
+            \item Exprima \(\vec{BG}\) como combinação linear de \(\vec{BA}\), \(\vec{BC}\) e \(\vec{BD}\)
+            \item Calcule \(m\) para que o ponto \(X=B+m\vec{BG}\) pertença ao plano da face \(ACD\)
+        \end{itemize}
+    }
+    \only<1-3>{
+        \pause
+        \textit{Para quem não lembra...}
+        \begin{itemize}
+            \item O \textit{baricentro} de um triângulo é o ponto onde as retas que contém as medianas se encontram
+            \item Uma \textit{mediana} é o segmento que liga um vértice ao ponto médio do lado oposto
+            \item Assim, temos que \(G\) é o baricentro do triângulo \(MNP\):
+
+        \end{itemize}
+    }
+    \only<3>{
+        \begin{center}
+            \begin{tikzpicture}[scale=2]
+
+                \coordinate (M) at (0,0);
+                \coordinate (N) at (2,0);
+                \coordinate (P) at (1,{sqrt(3)});
+                \draw[thick] (M) -- (N) -- (P) -- cycle;
+                \node [left] at (M) {M};
+                \node [right] at (N) {N};
+                \node [above] at (P) {P};
+
+                \coordinate (Y) at ($(M) !0.5! (P)$);
+                \coordinate (X) at ($(P) !0.5! (N)$);
+                \coordinate (Z) at ($(M) !0.5! (N)$);
+
+                \node [red,below] at (Z) {Z};
+                \node [red,above right] at (X) {X};
+                \node [red,above left] at (Y) {Y};
+
+                \draw [thick, red, name path=MX] (M) -- (X);
+                \draw [thick, red] (N) -- (Y);
+                \draw [thick, red, name path=PZ] (P) -- (Z);
+
+                \path [name intersections={of=MX and PZ,by=G}];
+                \node [blue,left] at (G) {G};
+            \end{tikzpicture}
+
+        \end{center}
+    }
 \end{frame}
 
+\begin{frame}{Base}
+    \begin{itemize}
+        \item Chamamos uma \textit{sequência} de vetores linearmente independente \(E=(\vec{e_1}, \vec{e_2}, \vec{e_3})\)
+            de \textbf{base} em \textcolor{blue}{\(R^3\)}
+        \item Assim, temos que qualquer vetor \(\vec{u}\) pode ser escrito como
+            \[
+                \vec{u} = \alpha_1 \vec{e_1} + \alpha_2 \vec{e_2} + \alpha_3 \vec{e_3}
+            \]
+        \item Cada escalar da \textit{sequência} de escalares \((\alpha_1, \alpha_2, \alpha_3)\) é chamado de
+            \textbf{coordenada} do vetor \(\vec{u}\) na base \(E\)
+        \item Podemos escrever que \(\vec{u} = (\alpha_1, \alpha_2, \alpha_3)_E\) ou simplesmente
+            \(\vec{u} = (\alpha_1, \alpha_2, \alpha_3)\) quando não há dúvidas quanto à base utilizada
+    \end{itemize}
+\end{frame}
 
+\begin{frame}{Propriedades}
+    \begin{itemize}
+        \item Se \(\vec{u}=(a_1,a_2,a_3)_E\) e \(\vec{v}=(b_1,b_2,b_3)_E\), então
+            \[
+                \vec{u}+\vec{v}=(a_1+b_1,a_2+b_2,a_3+b_3)
+            \]
+        \item Se \(\vec{u}=(a_1,a_2,a_3)_E\), então \(m\vec{u}=(m a_1,m a_2,m a_3)_E\)
+        \item Os vetores \(\vec{u}=(a_1,a_2,a_3)_E\) e \(\vec{v}=(b_1,b_2,b_3)_E\) são LD se, e somente se,
+            os três determinantes
+            \[
+                \begin{vmatrix}
+                    a_1 & a_2 \\ b_1 & b_2
+                \end{vmatrix} \qquad
+                \begin{vmatrix}
+                    a_1 & a_3 \\ b_1 & b_3
+                \end{vmatrix} \qquad
+                \begin{vmatrix}
+                    a_2 & a_3 \\ b_2 & b_3
+                \end{vmatrix}
+            \]
+            são nulos
+        \item Os vetores \(\vec{u}=(a_1,a_2,a_3)_E\), \(\vec{v}=(b_1,b_2,b_3)_E\) e \(\vec{w}=(c_1,c_2,c_3)_E\) são LD se, e somente se,
+            \[
+                \begin{vmatrix}
+                    a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3
+                \end{vmatrix} = 0
+            \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Módulo e bases ortonormais}
+    \begin{itemize}
+        \item Os vetores não nulos \(\vec{u}\) e \(\vec{v}\) são \textbf{ortogonais} se existe um representante
+            \((A,B)\) de um deles e um representante \((A,C)\) do outro tais que os segmentos AB e AC sejam
+            \textit{perpendiculares}
+        \item Representa-se por \(\vec{u} \perp \vec{v}\)
+        \item O vetor nulo é ortogonal a qualquer vetor
+        \item Uma base \((\vec{e_1},\vec{e_2},\vec{e_3})\) é \textbf{ortonormal} se \(\vec{e_1},\vec{e_2},\vec{e_3}\)
+            são \textit{unitários} e dois a dois \textit{ortogonais}
+        \item Seja \(\vec{u}=(a_1,a_2,a_3)_E\). Se \(E\) é uma base ortonormal, então temos
+            que\footnote{Isso só é verdade para bases ortonormais, \textit{tome cuidado}}:
+            \[
+                ||\vec{u}||=\sqrt{a_1^2+a_2^2+a_3^2}
+            \]
+
+    \end{itemize}
+\end{frame}
 
