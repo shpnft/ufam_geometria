@@ -1,0 +1,109 @@
+\documentclass[brazilian, fleqn]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsfonts,amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+
+\DeclareMathOperator{\sen}{sen}
+
+\usepackage[left=2cm, bottom=2cm, right=1.5cm, top=1.5cm]{geometry}
+
+%https://tex.stackexchange.com/a/224014
+\setlength{\jot}{1em}
+
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+
+\allowdisplaybreaks[1]
+
+\begin{document}
+
+\section{Resolução do exemplo 3a}
+
+\begin{gather}
+    %%https://tex.stackexchange.com/a/101760
+    %\begin{tikzpicture}[remember picture, overlay]
+    %    \foreach \i/\j in {f1/red,f2/blue,f3/green!50!black} {
+    %    \draw [\j] ([yshift=2em] pic cs:\i a) rectangle ([yshift=-1em] pic cs:\i b);
+    %    \draw [\j,->] (pic cs:\i b) to[out=0, in=90] ([yshift=2em] $(pic cs:f4a)!0.75!(pic cs:f4b)$);
+    %}
+    %    \draw [magenta] ([yshift=2em] pic cs:f4a) rectangle ([yshift=-1em] pic cs:f4b);
+    %\end{tikzpicture}
+    \vec{BG}= \vec{BM}+\vec{MG}=\tikzmark{f1a} \frac{\vec{BD}}{2}+\vec{MG} \tikzmark{f1b} \\
+    \begin{aligned}[t]
+        \vec{MN}&=\vec{MD}+\vec{DN} =\frac{\vec{BD}}{2}+\frac{\vec{DC}}{2} \\
+                &=\frac{\vec{BD}}{2}-\frac{\vec{BD}}{2}+\frac{\vec{BC}}{2} \\
+                &=\tikzmark{f2a} \frac{\vec{BC}}{2} \tikzmark{f2b}
+    \end{aligned} \\
+    \begin{aligned}[t]
+        \vec{MP}&=\vec{MB}+\vec{BC}+\vec{CP}=-\frac{\vec{BD}}{2}+\vec{BC}+\frac{\vec{CA}}{2} \\
+                &=-\frac{\vec{BD}}{2}+\vec{BC}-\frac{\vec{BC}}{2}+\frac{\vec{BA}}{2} \\
+                &=\tikzmark{f3a} \frac{\vec{BA}}{2}+\frac{\vec{BC}}{2}-\frac{\vec{BD}}{2} \tikzmark{f3b}
+    \end{aligned} \\
+    \begin{aligned}[t]
+        \vec{BG}&=\tikzmark{f4a} \frac{\vec{BD}}{2}+\alpha \frac{\vec{BC}}{2}+\beta \frac{\vec{BA}}{2}+\beta \frac{\vec{BC}}{2}-\beta \frac{\vec{BD}}{2} \tikzmark{f4b} \\
+                &=\frac{\beta}{2}\vec{BA}+\frac{1}{2}(\alpha+\beta)\vec{BC}+\frac{1}{2}(1-\beta)\vec{BD}
+    \end{aligned} \\
+    \vec{MG}=\alpha \vec{MN}+\beta \vec{MP} \\
+    \vec{MG}=\lambda \vec{MX} \\
+    \begin{aligned}[t]
+        \vec{MX}&=\vec{MN}+\vec{NX}=\vec{MN}+\frac{NP}{2}\\
+                &=\vec{MN}-\frac{\vec{MN}}{2}+\frac{\vec{MP}}{2} \\
+                &=\frac{\vec{MN}}{2}+\frac{\vec{MP}}{2}
+    \end{aligned} \\
+    \vec{MG}=\frac{\lambda}{2}(\vec{MN}+\vec{MP})\\
+    \vec{NG}=\sigma (\vec{NM}+\vec{NP}) \\
+    \vec{NG}=-\vec{MN}+\vec{MG}\\
+    \vec{NP}=-\vec{MN}+\vec{MP}\\
+    \vec{MG}-\vec{MN}=\frac{\sigma}{2}(-\vec{MN}-\vec{MN}+\vec{MP})\\
+    \vec{MG}=(1-\sigma)\vec{MN}+\frac{\sigma}{2}\vec{MP} \\
+    \begin{cases}
+        1-\sigma &= \frac{\lambda}{2}\\
+        \frac{\sigma}{2}&=\frac{\lambda}{2}
+    \end{cases} \implies
+    \lambda = \sigma = \frac{2}{3}\\
+    \alpha = \beta = \frac{1}{3} \\
+    \tikzmark{g1a} \vec{BG}=\frac{\vec{BA}}{6}+\frac{\vec{BC}}{3}+\frac{\vec{BD}}{3} \tikzmark{g1b}
+    %%https://tex.stackexchange.com/a/101760
+    %\begin{tikzpicture}[remember picture, overlay]
+    %    \draw [magenta] ([yshift=2em] pic cs:g1a) rectangle ([yshift=-1em] pic cs:g1b);
+    %\end{tikzpicture}
+\end{gather}
+
+\section{Resolução do exemplo 3b}
+\begin{gather}
+\vec{BX}=\frac{m}{6}\vec{BA}+\frac{m}{3}\vec{BC}+\frac{m}{3}\vec{BD}\\
+\alpha \vec{DX}+\beta \vec{AC}+\gamma \vec{CD} = \vec{0} \\
+\begin{aligned}[t]
+    \vec{DX}&=\vec{DB}+\vec{BX}\\
+            &=-\vec{BD}+\vec{BX}\\
+            &=-\vec{BD}+\frac{m}{6}\vec{BA}+\frac{m}{3}\vec{BC}+\frac{m}{3}\vec{BD}\\
+            &=\frac{m}{6}\vec{BA}+\frac{m}{3}\vec{BC}+\left(\frac{m}{3}-1\right)\vec{BD}
+\end{aligned} \\
+\vec{AC}=\vec{AB}+\vec{BC}=-\vec{BA}+\vec{BC}\\
+\vec{CD}=\vec{CB}+\vec{BD}=-\vec{BC}+\vec{BD}\\
+\alpha \left[\frac{m}{6}\vec{BA}+\frac{m}{3}\vec{BC}+\left(\frac{m}{3}-1\right)\vec{BD}\right]+
+\beta \left(-\vec{BA}+\vec{BC}\right)+ \gamma \left(-\vec{BC}+\vec{BD}\right) = \vec{0} \\
+\left(\alpha\frac{m}{6}-\beta\right)\vec{BA}+\left(\alpha\frac{m}{3}+\beta-\gamma\right)\vec{BC}+
+\left[\alpha\left(\frac{m}{3}-1\right)+\gamma\right]\vec{BD}=\vec{0} \\
+\begin{cases}
+    \alpha\frac{m}{6}-\beta &=0 \\
+    \alpha\frac{m}{3}+\beta-\gamma &=0 \\
+    \alpha\left(\frac{m}{3}-1\right)+\gamma &=0
+\end{cases} \\
+\begin{vmatrix}
+    \frac{m}{6} & -1 & 0 \\
+    \frac{m}{3} & 1 & -1 \\
+    \frac{m}{3}-1 & 0 & 1
+\end{vmatrix} = 0 \\
+\frac{m}{6}+\frac{m}{3}-1+\frac{m}{3}=0 \\
+m=\frac{6}{5}
+\end{gather}
+
+\end{document}
