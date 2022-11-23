@@ -24,27 +24,15 @@
 
 \begin{document}
 
-No tetraedro \(ABCD\), figura anterior, sejam \(M\), \(N\) e \(P\), respectivamente,
+No tetraedro \(ABCD\), sejam \(M\), \(N\) e \(P\), respectivamente,
 os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo \(MNP\).
 \begin{enumerate}
     \item Exprima \(\vec{BG}\) como combinação linear de \(\vec{BA}\), \(\vec{BC}\) e \(\vec{BD}\)
     \item Calcule \(m\) para que o ponto \(X=B+m\vec{BG}\) pertença ao plano da face \(ACD\)
 \end{enumerate}
 
-\section{Resolução do item 1}
+\begin{center}
 
-\begin{gather}
-    %%https://tex.stackexchange.com/a/101760
-    %\begin{tikzpicture}[remember picture, overlay]
-    %    \foreach \i/\j in {f1/red,f2/blue,f3/green!50!black} {
-    %        \draw [\j] ([yshift=2em] pic cs:\i a) rectangle ([yshift=-1em] pic cs:\i b);
-    %        \draw [\j,->] (pic cs:\i b) to[out=0, in=90] ([yshift=2em] $(pic cs:f4a)!0.75!(pic cs:f4b)$);
-    %    }
-    %    \draw [magenta] ([yshift=2em] pic cs:f4a) rectangle ([yshift=-1em] pic cs:f4b);
-    %\end{tikzpicture}
-    %
-    \vec{BG}= \vec{BM}+\vec{MG}=\tikzmark{f1a} \frac{\vec{BD}}{2}+\vec{MG} \tikzmark{f1b} \\
-    \vec{MG}=\alpha \vec{MN}+\beta \vec{MP} \\
     \begin{minipage}{0.45\textwidth}
         \begin{tikzpicture}[scale=1.6]
             \coordinate (A) at (0.6,0.95);
@@ -90,18 +78,25 @@ os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo
         \end{tikzpicture}
     \end{minipage} \notag \\
     %
+\end{center}
+
+\section{Resolução do item 1}
+
+\begin{gather}
+    \vec{BG}= \vec{BM}+\vec{MG}=\frac{\vec{BD}}{2}+\vec{MG} \\
+    \vec{MG}=\alpha \vec{MN}+\beta \vec{MP} \\
     \begin{aligned}[t]
         \vec{MN}&=\vec{MD}+\vec{DN} =\frac{\vec{BD}}{2}+\frac{\vec{DC}}{2} \\
                 &=\frac{\vec{BD}}{2}-\frac{\vec{BD}}{2}+\frac{\vec{BC}}{2} \\
-                &=\tikzmark{f2a} \frac{\vec{BC}}{2} \tikzmark{f2b}
+                &=\frac{\vec{BC}}{2}
     \end{aligned} \\
     \begin{aligned}[t]
         \vec{MP}&=\vec{MB}+\vec{BC}+\vec{CP}=-\frac{\vec{BD}}{2}+\vec{BC}+\frac{\vec{CA}}{2} \\
                 &=-\frac{\vec{BD}}{2}+\vec{BC}-\frac{\vec{BC}}{2}+\frac{\vec{BA}}{2} \\
-                &=\tikzmark{f3a} \frac{\vec{BA}}{2}+\frac{\vec{BC}}{2}-\frac{\vec{BD}}{2} \tikzmark{f3b}
+                &=\frac{\vec{BA}}{2}+\frac{\vec{BC}}{2}-\frac{\vec{BD}}{2}
     \end{aligned} \\
     \begin{aligned}[t]
-        \vec{BG}&=\tikzmark{f4a} \frac{\vec{BD}}{2}+\alpha \frac{\vec{BC}}{2}+\beta \frac{\vec{BA}}{2}+\beta \frac{\vec{BC}}{2}-\beta \frac{\vec{BD}}{2} \tikzmark{f4b} \\
+        \vec{BG}&=\frac{\vec{BD}}{2}+\alpha \frac{\vec{BC}}{2}+\beta \frac{\vec{BA}}{2}+\beta \frac{\vec{BC}}{2}-\beta \frac{\vec{BD}}{2} \\
                 &=\frac{\beta}{2}\vec{BA}+\frac{1}{2}(\alpha+\beta)\vec{BC}+\frac{1}{2}(1-\beta)\vec{BD}
     \end{aligned} \\
     \vec{MG}=\alpha \vec{MN}+\beta \vec{MP} \\
@@ -112,10 +107,11 @@ os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo
                 &=\frac{\vec{MN}}{2}+\frac{\vec{MP}}{2}
     \end{aligned} \\
     \vec{MG}=\frac{\lambda}{2}(\vec{MN}+\vec{MP})\\
-    \vec{NG}=\sigma (\vec{NM}+\vec{NP}) \\
-    \vec{NG}=-\vec{MN}+\vec{MG}\\
-    \vec{NP}=-\vec{MN}+\vec{MP}\\
-    \vec{MG}-\vec{MN}=\frac{\sigma}{2}(-\vec{MN}-\vec{MN}+\vec{MP})\\
+    \vec{MG}=\vec{MN}+\vec{NG} \\
+    \vec{NG}=\sigma \vec{NY} \\
+    \vec{NY} =\vec{NM}+\vec{MY} =-\vec{MN}+\frac{\vec{MP}}{2} \\
+    \vec{NG}= \sigma\left(-\vec{MN}+\frac{\vec{MP}}{2}\right)\\
+    \vec{MG}=\vec{MN}+\sigma\left(-\vec{MN}+\frac{\vec{MP}}{2}\right)\\
     \vec{MG}=(1-\sigma)\vec{MN}+\frac{\sigma}{2}\vec{MP} \\
     \begin{cases}
         1-\sigma &= \frac{\lambda}{2}\\
@@ -123,7 +119,7 @@ os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo
     \end{cases} \implies
     \lambda = \sigma = \frac{2}{3}\\
     \alpha = \beta = \frac{1}{3} \\
-    \tikzmark{g1a} \vec{BG}=\frac{\vec{BA}}{6}+\frac{\vec{BC}}{3}+\frac{\vec{BD}}{3} \tikzmark{g1b}
+    \vec{BG}=\frac{\vec{BA}}{6}+\frac{\vec{BC}}{3}+\frac{\vec{BD}}{3}
 \end{gather}
 
 \section{Resolução do item 2}
@@ -135,7 +131,7 @@ os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo
     \item Queremos determinar \(m\) para que o ponto \(X=B+m\vec{BG}\) pertença ao plano da face \(ACD\)
 \end{itemize}
 \begin{center}
-    \begin{tikzpicture}[scale=1.6]
+    \begin{tikzpicture}[scale=1.5]
         \coordinate (A) at (0.6,0.95);
         \coordinate (B) at (2.75,0.4);
         \coordinate (C) at (3.8,1.09);
@@ -183,5 +179,14 @@ os pontos médios de \(BD\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo
     \frac{m}{6}+\frac{m}{3}-1+\frac{m}{3}=0 \\
     m=\frac{6}{5}
 \end{gather}
+
+\section{Atividade}
+
+No tetraedro \(ABCD\), sejam \(M\), \(N\) e \(P\), respectivamente,
+os pontos médios de \(BC\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo \(MNP\).
+\begin{enumerate}
+    \item Exprima \(\vec{CG}\) como combinação linear de \(\vec{CA}\), \(\vec{CB}\) e \(\vec{CD}\)
+    \item Calcule \(m\) para que o ponto \(X=C+m\vec{CG}\) pertença ao plano da face \(ABD\)
+\end{enumerate}
 
 \end{document}
