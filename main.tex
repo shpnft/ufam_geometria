@@ -19,33 +19,4 @@
 
 \include{aulas/parte01}
 
-%\begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%        \coordinate (A) at (0,0,2);
-%        \coordinate (B) at (6,0,2);
-%        \coordinate (C) at (6,0,0);
-%        \coordinate (D) at (0,0,0);
-%        \coordinate (E) at ($(A)+(0,2,0)$);
-%        \coordinate (F) at ($(B)+(0,2,0)$);
-%        \coordinate (G) at ($(C)+(0,2,0)$);
-%        \coordinate (H) at ($(D)+(0,2,0)$);
-%
-%        \draw [thick] (A) -- (B) -- (C) -- (D) -- cycle;
-%        \draw [thick] (E) -- (F) -- (G) -- (H) -- cycle;
-%        \draw [thick] (A) -- (E);
-%        \draw [thick] (D) -- (H);
-%        \draw [thick] (B) -- (F);
-%        \draw [thick] (C) -- (G);
-%
-%        \foreach \n in {A, ..., H} {
-%            \node [above left] at (\n) {\n};
-%            \filldraw (\n) circle (1 pt);
-%        }
-%
-%        \draw[red,thick,->] (A) -- (B);
-%        \draw[red,thick,->] (A) -- (C);
-%        \draw[red,thick,->] (A) -- (F);
-%    \end{tikzpicture}
-%\end{center}
-
 \end{document}
