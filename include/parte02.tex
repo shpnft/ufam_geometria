@@ -76,3 +76,321 @@
     \end{itemize}
 
 \end{frame}
+
+
+\begin{frame}[c]{Exercício 9-5}
+Sendo \(ABCD\) um tetraedro regular de aresta unitária, calcule \(\vec{AB}\cdot\vec{DA}\)
+\end{frame}
+\begin{frame}{Exercício 9-5}
+
+\begin{itemize}[<+->]
+    \item \textit{O que é um tetraedro regular?}
+    \item \textit{Google}:
+    ''São denominados de tetraedro todos os sólidos que possuem quatro faces. ... Quando um tetraedro possui as quatro faces e os quatro bicos iguais (também chamados ângulos poliédricos), temos um tetraedro regular. A pirâmide de base triangular é um exemplo.''
+    \item Portanto, \(\vec{AB}\) e \(\vec{AD}\) são arestas de um triângulo equilátero:
+    \begin{center}
+        \begin{tikzpicture}[scale=2]
+            \draw[thick] (0,0) coordinate[label=below:A] (A) --
+                         (1,0) coordinate[label=below:B] (B) --
+                         ($0.5*(1,0)+0.5*sqrt(3)*(0,1)$) coordinate[label=above:D] (D) --
+                         cycle;
+            \draw[red] (0.15,0) arc (0:60:0.15);
+            \node[red,right] at (0.1,0.15) {$60^\circ$};
+        \end{tikzpicture}
+    \end{center}
+    \item Se o ângulo entre \(\vec{AB}\) e \(\vec{AD}\) é \SI{60}{\degree}, então o ângulo entre \(\vec{AB}\) e \(\vec{DA}\) é
+    \(\SI{180}{\degree}-\SI{60}{\degree}=\SI{120}{\degree}\)
+    \item Como a aresta é unitária, temos que
+    \(\vec{AB}\cdot\vec{DA}=1 \cdot 1 \cdot \cos{\SI{120}{\degree}}=-1/2\)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[c]{Exercício 9-6}
+    Os lados do triângulo equilátero \(ABC\) têm medida 2. Calcule
+    \[
+        \vec{AB}\cdot\vec{BC}+\vec{BC}\cdot\vec{CA}+\vec{CA}\cdot\vec{AB}
+    \]
+\end{frame}
+\begin{frame}{Exercício 9-6}
+   \begin{center}
+        \begin{tikzpicture}[scale=2]
+            \draw[thick] (0,0) coordinate[label=below:A] (A) --
+                         (1,0) coordinate[label=below:B] (B) --
+                         ($0.5*(1,0)+0.5*sqrt(3)*(0,1)$) coordinate[label=above:C] (C) --
+                         cycle;
+            \draw[red] (0.15,0) arc (0:60:0.15);
+            \node[red,right] at (0.1,0.15) {$60^\circ$};
+        \end{tikzpicture}
+    \end{center}
+    \begin{itemize}[<+->]
+        \item \(
+        \vec{AB}\cdot\vec{BC}=
+        2\cdot 2 \cos{(\SI{180}{\degree}-\SI{60}{\degree})}=
+        4\cdot\cos{\SI{120}{\degree}}=-2
+        \)
+        \item \(
+        \vec{BC}\cdot\vec{CA}=
+        2\cdot 2 \cos{(\SI{180}{\degree}-\SI{60}{\degree})}=
+        4\cdot\cos{\SI{120}{\degree}}=-2
+        \)
+        \item \(
+        \vec{CA}\cdot\vec{AB}=
+        2\cdot 2 \cos{(\SI{180}{\degree}-\SI{60}{\degree})}=
+        4\cdot\cos{\SI{60}{\degree}}=-2
+        \)
+        \item \(\vec{AB}\cdot\vec{BC} + \vec{BC}\cdot\vec{CA} +
+        \vec{CA}\cdot\vec{AB}=-2-2-2=-6\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Exercício 9-7}
+    São dados os números reais positivos \(a\) e \(b\), e o vetor \(\vec{u}\), de norma \(a\).
+    Dentre os vetores de norma \(b\), qual é o que torna máximo o produto escalar \(\vec{u}\cdot\vec{v}\)?
+    E mínimo? Quais são esses valores máximo e mínimo?
+\end{frame}
+\begin{frame}{Exercício 9-7}
+    \begin{itemize}[<+->]
+            \item \(
+            \vec{u}\cdot\vec{v}=||\vec{u}||\cdot ||\vec{v}||\cos{\theta}=
+            ab\cos{\theta}
+            \)
+            \item Mas \(-1 \leq \cos{\theta} \leq 1\), onde \(
+            \cos{\theta}=-1 \implies\theta=\SI{180}{\degree}\) e \(
+            \cos{\theta}=1 \implies\theta=\SI{0}{\degree}\)
+            \item \(\theta=\SI{0}{\degree} \implies \) vetores com mesmo sentido e direção
+            \item \(\theta=\SI{180}{\degree} \implies \) vetores com mesma direção e sentidos opostos
+            \item Assim, o vetor \(\vec{v}\) que dá o maior produto escalar é um vetor \textbf{paralelo} a \(\vec{u}\) com módulo \(b\), ou seja,
+            \[
+            \vec{v}=\frac{b}{a}\vec{u}
+            \]
+            de acordo com a definição de produto de um escalar por vetor e \(
+            \vec{u}\cdot\vec{v}=ab\)
+
+            \item Analogamente, o vetor \(\vec{v}\) que dá o menor produto escalar é um vetor \textbf{antiparalelo} a \(\vec{u}\) com módulo \(b\), ou seja,
+            \[
+            \vec{v}=-\frac{b}{a}\vec{u}
+            \]
+            de acordo com a definição de produto de um escalar por vetor e \(
+            \vec{u}\cdot\vec{v}=-ab\)
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[c]{Exercício 9-13}
+    \begin{enumerate}[(a)]
+        \item Obtenha os valores de norma \(3\sqrt{3}\) que são ortogonais a \(\vec{u}=(2,3,-1)\) e a
+            \(\vec{v}=(2,-4,6)\)
+        \item Qual dos vetores obtidos no item (a) forma ângulo agudo com \((1,0,0)\)
+    \end{enumerate}
+\end{frame}
+\begin{frame}{Exercício 9-13}
+
+\begin{itemize}[<+->]
+    \item Considere que os vetores procurados têm a forma \(\vec{w}=(x,y,z)\)
+    \item Assim, temos o sistema de equações:
+    \[
+    \begin{cases}
+    2x+3y-z&=0 \\ 2x-4y+6z&=0 \\ \sqrt{x^2+y^2+z^2}&=3\sqrt{3}
+    \end{cases}
+    \]
+    onde a primeira e segunda equação saem da condição de ortogonalidade e a terceira do módulo (norma) de \(\vec{w}\)
+    \item ''Resolvendo'' as duas primeiras equações, temos que:
+    \[
+    \begin{cases}
+    \alert{2x}+3y-z&=0 \\ \alert{2x}-4y+6z&=0
+    \end{cases}
+    \implies 4y-6z=-3y+z \implies 7y=7z \implies y=z
+    \]
+    \item Além disso, temos que \(x=-y\)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{}
+    \begin{itemize}[<+->]
+        \item Como \(x=-y\) e \(z=y\), podemos resolver a terceira equação:
+        \[
+        \sqrt{x^2+y^2+z^2}=3\sqrt{3} \implies
+        \sqrt{(-y)^2+y^2+y^2}=3\sqrt{3} \implies
+        \sqrt{3y^2}=3\sqrt{3}
+        \]
+        \[
+        \sqrt{y^2}=3 \implies y=\pm 3
+        \]
+        \item Assim, temos que a resposta de \alert{a)} é \(\vec{w}=(-3,3,3)\) ou \(\vec{w}=(3,-3,-3)\)
+        \item b) Um ângulo agudo é um ângulo menor que \SI{90}{\degree} e \(\cos{\theta} > 0\) quando \( 0 \leq \theta < \SI{90}{\degree}\)
+        \item Como \((x,y,z) \cdot (1,0,0)=x\), então somente \((3,-3,-3)\) faz um ângulo agudo com \((1,0,0)\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Exercício 9-18}
+    Descreva o conjunto de todos os vetores \(\vec{w}\) ortogonais a \(\vec{v}=(2,1,2)\) tais que
+    \(\vec{u}=(1,1,-1)\) seja combinação linear de \(\vec{v}\), \(\vec{w}\)
+\end{frame}
+\begin{frame}{Exercício 9-18}
+    \begin{itemize}[<+->]
+        \item Considere que \(\vec{w}=(x,y,z)\)
+        \item Para \(\vec{w}\) ser ortogonal a \(\vec{v}=(2,1,2)\) temos que
+        \[
+        \vec{w}\cdot \vec{v}=0 \implies 2x+y+2z=0
+        \]
+        \item Para \(\vec{u}\) ser combinação linear de \(\vec{v}\) e \(\vec{w}\), deve existir \(a\) e \(b\) tal que
+        \[
+        (1,1,-1)=a(2,1,2)+b(x,y,z) \implies
+        \begin{cases}
+        2a+bx &= 1 \\ a+by&=1 \\ 2a+bz&=-1
+        \end{cases}
+        \]
+        \item Desse sistema temos que
+        \[
+        2(2a+bx)+(a+by)+2(2a+bz)=2+1-2=1 \implies 9a + b(2x+y+2z)=1 \implies a=\frac{1}{9}
+        \]
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{}
+    \begin{itemize}[<+->]
+        \item Substituindo \(a=1/9\) em
+        \[
+            \begin{cases}
+            2a+bx &= 1 \\ a+by&=1 \\ 2a+bz&=-1
+            \end{cases}
+        \]
+        \item[]
+        e isolando \(x\), \(y\) e \(z\), temos que
+        \[
+        \begin{cases}
+            x&=\frac{7}{9b} \\ y&=\frac{8}{9b} \\ z&=-\frac{11}{9b}
+        \end{cases}
+        \]
+        \item Ou seja,
+        \[
+        \vec{w}=\frac{1}{9b}(7,8,-11)=\lambda (7,8,-11)
+        \]
+
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{Exercício 9-24}
+%     \begin{itemize}[<+->]
+%         \item Se \((\vec{u},\vec{v}, \vec{w})\) é base, então \((\vec{u},\vec{v}, \vec{w})\) é LI e
+%         \[
+%         \alpha \vec{u}+ \beta\vec{v}+\gamma\vec{w}=\vec{0}
+%         \]
+%         somente quando \(\alpha=\beta=\gamma=0\)
+%         \item Como sabemos as medidas angulares entre os vetores \(\vec{u}\) e \(\vec{v}\) e \(\vec{u}\) e \(\vec{w}\), vamos ''multiplicar'' \(\vec{u}\) por ambos os lados da igualdade:
+%         \begin{align*}
+%             \vec{u}\cdot(\alpha \vec{u}+ \beta\vec{v}+\gamma\vec{w}) &=
+%                 \vec{u}\cdot\vec{0} \\
+%             \alpha\vec{u}\cdot\vec{u}+
+%                 \beta\vec{u}\cdot\vec{v}+\gamma\vec{u}\cdot\vec{w} &=
+%                 0 \\
+%              \uncover<+-> {\alpha\alert{||\vec{u}||}||\vec{u}||+
+%                 \beta\alert{||\vec{u}||}||\vec{v}||\cos{\SI{30}{\degree}}+
+%                 \gamma\alert{||\vec{u}||}\vec{w}||\cos{\SI{45}{\degree}} &=0 \\
+%               \alpha||\vec{u}||+
+%                 \beta||\vec{v}||\frac{\sqrt{3}}{2}+
+%                 \gamma||\vec{w}||\frac{\sqrt{2}}{2} &=0 \\}
+%         \end{align*}
+%     \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}{}
+%     \begin{itemize}[<+->]
+%         \item Agora vamos ''multiplicar'' \(\vec{v}\):
+%         \begin{align*}
+%             \vec{v}\cdot(\alpha \vec{u}+ \beta\vec{v}+\gamma\vec{w}) &=
+%                 \vec{v}\cdot\vec{0} \\
+%             \alpha\vec{v}\cdot\vec{u}+
+%                 \beta\vec{v}\cdot\vec{v}+\gamma\vec{v}\cdot\vec{w} &=
+%                 0 \\
+%              \uncover<+-> {\alpha\alert{||\vec{v}||}||\vec{u}||\cos{\SI{30}{\degree}}+
+%                 \beta\alert{||\vec{v}||}||\vec{v}||+
+%                 \gamma\alert{||\vec{v}||}\vec{w}||\cos{\SI{90}{\degree}} &=0 \\
+%               \alpha||\vec{u}||\frac{\sqrt{3}}{2}+
+%                 \beta||\vec{v}|| &=0 \\ }
+%         \end{align*}
+
+%         \vspace{-0.5cm} % ''comendo'', na inocência, o espaço após align
+
+%         \item Finalmente, vamos ''multiplicar'' \(\vec{w}\)
+%         \begin{align*}
+%             \vec{w}\cdot(\alpha \vec{u}+ \beta\vec{v}+\gamma\vec{w}) &=
+%                 \vec{w}\cdot\vec{0} \\
+%             \alpha\vec{w}\cdot\vec{u}+
+%                 \beta\vec{w}\cdot\vec{v}+\gamma\vec{w}\cdot\vec{w} &=
+%                 0 \\
+%              \uncover<+-> {\alpha\alert{||\vec{w}||}||\vec{u}||\cos{\SI{45}{\degree}}+
+%                 \beta\alert{||\vec{w}||}||\vec{v}||\cos{\SI{90}{\degree}}+
+%                 \gamma\alert{||\vec{w}||}\vec{w}|| &=0 \\
+%               \alpha||\vec{u}||\frac{\sqrt{2}}{2}+
+%                 \gamma||\vec{w}|| &=0 \\ }
+%         \end{align*}
+%     \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}{}
+%     \begin{itemize}[<+->]
+%         \item Juntamos, então, as 3 equações obtidas:
+%         \[
+%             \begin{cases}
+%              \alpha||\vec{u}||+
+%                 \beta||\vec{v}||\frac{\sqrt{3}}{2}+
+%                 \gamma||\vec{w}||\frac{\sqrt{2}}{2} &=0 \\
+%             \alpha||\vec{u}||\frac{\sqrt{3}}{2}+
+%                 \beta||\vec{v}|| &=0 \\
+%             \alpha||\vec{u}||\frac{\sqrt{2}}{2}+
+%                 \gamma||\vec{w}|| &=0
+%             \end{cases}
+%         \]
+%         \item Como \(||\vec{u}||\), \(||\vec{v}||\) e \(||\vec{w}||\) são diferentes de zero, podemos reescrever
+%         \[
+%             \begin{cases}
+%              \alpha'+
+%                 \beta'\frac{\sqrt{3}}{2}+
+%                 \gamma'\frac{\sqrt{2}}{2} &=0 \\
+%             \alpha'\frac{\sqrt{3}}{2}+
+%                 \beta' &=0 \\
+%             \alpha'\frac{\sqrt{2}}{2}+
+%                 \gamma' &=0
+%             \end{cases}
+%         \]
+%         \item Para que \(\alpha'\), \(\beta'\) e \(\gamma'\) possam ser não nulos, segundo a regra de Cramer, o determinante
+%         \[
+%         \begin{vmatrix}
+%         1 & \frac{\sqrt{3}}{2} & \frac{\sqrt{2}}{2} \\
+%         \frac{\sqrt{3}}{2} & 1 & 0 \\
+%         \frac{\sqrt{2}}{2} & 0 & 1
+%         \end{vmatrix}
+%         \]
+%         deve ser nulo
+%     \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}{}
+%     \begin{itemize}[<+->]
+%         \item Calculando o determinante, temos que
+%         \[
+%         \begin{vmatrix}
+%         1 & \frac{\sqrt{3}}{2} & \frac{\sqrt{2}}{2} \\
+%         \frac{\sqrt{3}}{2} & 1 & 0 \\
+%         \frac{\sqrt{2}}{2} & 0 & 1
+%         \end{vmatrix}=
+%         1+0+0-\left(\frac{\sqrt{2}}{2}\right)^2 -\left(\frac{\sqrt{3}}{2}\right)^2=
+%         -\frac{1}{4}
+%         \]
+%         \item Como consequência, \(\alpha'\), \(\beta'\) e \(\gamma'\) precisam ser nulos e, como consequência, \(\alpha\), \(\beta\) e \(\gamma\) também precisam ser nulos
+%         \item Ou seja, \((\vec{u},\vec{v}, \vec{w})\) é LI e, portanto, base \alert{(resposta da letra a)}
+
+%         \item \alert{letra b)} Se \(\vec{u},\vec{v} \text{ e } \vec{w}\) são ortogonais dois a dois, a medida angular entre \(\vec{u}\) e \(\vec{v}\), \(\vec{u}\) e \(\vec{w}\) e \(\vec{v}\) e \(\vec{w}\) é \SI{90}{\degree}
+%         \item Como \(\cos{\SI{90}{\degree}}=0\), o determinante no final da letra a, após a modificação, ficaria igual a 1 e, portanto,
+%         \(\vec{u},\vec{v} \text{ e } \vec{w}\) são LI
+%         \item O mesmo resultado vale para apenas 2 vetores ortogonais não nulos
+%     \end{itemize}
+
+% \end{frame}
