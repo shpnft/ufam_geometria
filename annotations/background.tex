@@ -1,0 +1,56 @@
+\documentclass[brazilian,landscape]{standalone}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\tikzset{pics/.cd,
+hexa/.style={code={\draw[opacity=0.5] (0,0) -- ++(60:1) -- ++(0:1) -- ++(-60:1) -- ++(240:1) -- ++(180:1) -- ++(120:1);}}}
+
+\begin{document}
+\begin{tikzpicture}
+    \foreach \i in {0,2,4,6,8} {
+        \draw (0,{\i*sin(60)}) pic{hexa};
+        \draw (1.5,{(\i+1)*sin(60)}) pic{hexa};
+        \draw (3.0,{\i*sin(60)}) pic{hexa};
+    }
+    \foreach \i in {3,5,7,9} {
+        \draw (4.5,{\i*sin(60)}) pic{hexa};
+        \draw (7.5,{\i*sin(60)}) pic{hexa};
+    }
+    \foreach \i in {4,6,8} {
+        \draw (6.0,{\i*sin(60)}) pic{hexa};
+    }
+    \foreach \i in {6,8} {
+        \draw (9.0,{\i*sin(60)}) pic{hexa};
+        \draw (10.5,{(\i+1)*sin(60)}) pic{hexa};
+        \draw (12.0,{\i*sin(60)}) pic{hexa};
+    }
+    \draw (13.5,{9*sin(60)}) pic{hexa};
+
+    \begin{scope}[shift={(40,-10)}, rotate=180]
+        \foreach \i in {0,2,4,6,8} {
+            \draw (0,{\i*sin(60)}) pic{hexa};
+            \draw (1.5,{(\i+1)*sin(60)}) pic{hexa};
+            \draw (3.0,{\i*sin(60)}) pic{hexa};
+        }
+        \foreach \i in {3,5,7,9} {
+            \draw (4.5,{\i*sin(60)}) pic{hexa};
+            \draw (7.5,{\i*sin(60)}) pic{hexa};
+        }
+        \foreach \i in {4,6,8} {
+            \draw (6.0,{\i*sin(60)}) pic{hexa};
+        }
+        \foreach \i in {6,8} {
+            \draw (9.0,{\i*sin(60)}) pic{hexa};
+            \draw (10.5,{(\i+1)*sin(60)}) pic{hexa};
+            \draw (12.0,{\i*sin(60)}) pic{hexa};
+        }
+        \draw (13.5,{9*sin(60)}) pic{hexa};
+    \end{scope}
+\end{tikzpicture}
+\end{document}
