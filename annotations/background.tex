@@ -1,4 +1,4 @@
-\documentclass[brazilian,landscape]{standalone}
+\documentclass[brazilian, landscape]{standalone}
 
 \usepackage{babel}
 \usepackage[utf8]{inputenc}
@@ -8,49 +8,59 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
-\tikzset{pics/.cd,
-hexa/.style={code={\draw[opacity=0.5] (0,0) -- ++(60:1) -- ++(0:1) -- ++(-60:1) -- ++(240:1) -- ++(180:1) -- ++(120:1);}}}
+\definecolor{colorbg}{HTML}{DEDCF8}
+
+\tikzset{down hexa chain/.pic={
+        \foreach \i in {1,...,#1} {
+            \path [draw, pic actions] (0, -{2*(\i-1)*sin(60)}) --
+            ++(60:1) --
+            ++(0:1) --
+            ++(-60:1) --
+            ++(240:1) --
+            ++(180:1) --
+            ++(120:1);
+        }
+    }
+}
+\tikzset{up hexa chain/.pic={
+        \foreach \i in {1,...,#1} {
+            \path [draw, pic actions] (0, {2*(\i-1)*sin(60)}) --
+            ++(60:1) --
+            ++(0:1) --
+            ++(-60:1) --
+            ++(240:1) --
+            ++(180:1) --
+            ++(120:1);
+        }
+    }
+}
 
 \begin{document}
-\begin{tikzpicture}
-    \foreach \i in {0,2,4,6,8} {
-        \draw (0,{\i*sin(60)}) pic{hexa};
-        \draw (1.5,{(\i+1)*sin(60)}) pic{hexa};
-        \draw (3.0,{\i*sin(60)}) pic{hexa};
-    }
-    \foreach \i in {3,5,7,9} {
-        \draw (4.5,{\i*sin(60)}) pic{hexa};
-        \draw (7.5,{\i*sin(60)}) pic{hexa};
-    }
-    \foreach \i in {4,6,8} {
-        \draw (6.0,{\i*sin(60)}) pic{hexa};
-    }
-    \foreach \i in {6,8} {
-        \draw (9.0,{\i*sin(60)}) pic{hexa};
-        \draw (10.5,{(\i+1)*sin(60)}) pic{hexa};
-        \draw (12.0,{\i*sin(60)}) pic{hexa};
-    }
-    \draw (13.5,{9*sin(60)}) pic{hexa};
+    \begin{tikzpicture}
+        \foreach \i/\j in {1/5,2/5,3/3,4/2,5/2} {
+            \draw ({3*(\i-1)},0) pic {down hexa chain=\j};
+        }
 
-    \begin{scope}[shift={(40,-10)}, rotate=180]
-        \foreach \i in {0,2,4,6,8} {
-            \draw (0,{\i*sin(60)}) pic{hexa};
-            \draw (1.5,{(\i+1)*sin(60)}) pic{hexa};
-            \draw (3.0,{\i*sin(60)}) pic{hexa};
+        \foreach \i/\j in {1/5,2/4,3/4,4/2,5/1} {
+            \draw ({1.5+3*(\i-1)},{sin(60)}) pic{down hexa chain=\j};
         }
-        \foreach \i in {3,5,7,9} {
-            \draw (4.5,{\i*sin(60)}) pic{hexa};
-            \draw (7.5,{\i*sin(60)}) pic{hexa};
-        }
-        \foreach \i in {4,6,8} {
-            \draw (6.0,{\i*sin(60)}) pic{hexa};
-        }
-        \foreach \i in {6,8} {
-            \draw (9.0,{\i*sin(60)}) pic{hexa};
-            \draw (10.5,{(\i+1)*sin(60)}) pic{hexa};
-            \draw (12.0,{\i*sin(60)}) pic{hexa};
-        }
-        \draw (13.5,{9*sin(60)}) pic{hexa};
-    \end{scope}
-\end{tikzpicture}
+
+        \begin{scope}
+            \clip (0,{2*sin(60)}) rectangle (0.5,{-12*sin(60)});
+
+            \draw (-1.5,{sin(60)}) pic{down hexa chain=7};
+        \end{scope}
+
+        \begin{scope}[shift={(37,{-23*sin(60)})}, rotate=180]
+            \clip (-1.5,0) rectangle ++(13.5,{-11*sin(60)-1});
+
+            \foreach \i/\j in {1/6,2/6,3/3,4/2,5/1} {
+                \draw ({3*(\i-1)},0) pic [fill=colorbg] {up hexa chain=\j};
+            }
+
+            \foreach \i/\j in {1/6,2/5,3/3,4/2} {
+                \draw ({1.5+3*(\i-1)},{sin(60)}) pic [fill=colorbg] {up hexa chain=\j};
+            }
+        \end{scope}
+    \end{tikzpicture}
 \end{document}
