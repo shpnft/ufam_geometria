@@ -187,4 +187,54 @@ os pontos médios de \(BC\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo
     \item Calcule \(m\) para que o ponto \(X=C+m\vec{CG}\) pertença ao plano da face \(ABD\)
 \end{enumerate}
 
+\newpage
+\section{Figura 11-5}
+\begin{center}
+    \begin{tikzpicture}[scale=1.75]
+        \coordinate (A) at (0.46,4.26);
+        \coordinate (B) at (3.38,8.63);
+        \coordinate (C) at (3.44,6.29); \node [above left, shift={(-1ex,-1ex)}] at (C) {O};
+        \coordinate (D) at (9.89,6.35);
+        \coordinate (E) at (2.39,5.56); \node [below] at (E) {A};
+        \coordinate (F) at (2.33,7.88);% \node [red] at (F) {F};
+        \coordinate (G) at (3.39,7.79); \node [below left] at (G) {C};
+        \coordinate (H) at (5.84,9.10); \node [above left] at (H) {Q};
+        \coordinate (I) at (4.48,6.84);
+        \coordinate (J) at (4.78,6.31); \node [below, shift={(1ex,1pt)}] at (J) {B};
+        \coordinate (K) at (5.87,5.60); \node [above right] at (K) {Q'};
+        \coordinate (L) at (4.49,4.99); \node [below] at (L) {P'};
+        \coordinate (M) at (2.02,5.31);
+        \coordinate (N) at (2.00,7.03);
+        \coordinate (O) at (3.40,7.98);
+        \coordinate (P) at (6.91,9.59); \node [right] at (P) {R};
+        \coordinate (Q) at (6.97,4.33); \node [below right,shift={(-1ex,0)}] at (Q) {R'};
+        \coordinate (R) at (5.82,8.35);
+
+        \filldraw [black!10] (C) -- (H) -- (P) -- (R) -- (I) -- cycle;
+         \node [above] at (I) {P};
+
+        \draw (A) -- (C);
+        \draw (C) -- (B);
+        \draw (C) -- (D);
+
+        \draw [very thick, ->] (C) -- (E);
+        \draw [very thick, ->] (C) -- (F);
+        \draw [very thick, ->] (C) -- (G);
+        \draw [very thick, ->] (C) -- (H);
+        \draw [very thick, ->] (C) -- (I);
+        \draw [very thick, ->] (C) -- (J);
+        \draw [very thick, ->] (C) -- (K);
+        \draw [very thick, ->] (C) -- (L);
+
+        \draw (M) -- (N) -- (O);
+        \draw (P) -- (Q);
+
+        \draw (H) -- (P) -- (I);
+        \draw (L) -- (Q) -- (K);
+        \draw [dotted] (K) -- (R);
+
+        \draw (I) -- (L);
+    \end{tikzpicture}
+\end{center}
+
 \end{document}

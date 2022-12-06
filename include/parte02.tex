@@ -120,28 +120,46 @@
 
 \begin{frame}[c]{Exercício 9-5}
     Sendo \(ABCD\) um tetraedro regular de aresta unitária, calcule \(\vec{AB}\cdot\vec{DA}\)
-\end{frame}
-
-\begin{frame}{Exercício 9-5}
+    \pause
     \begin{itemize}
         \item \textit{O que é um tetraedro regular?}
         \item \textit{Google}:
             ''Quando um tetraedro possui as quatro faces e os quatro
             bicos iguais (também chamados ângulos poliédricos), temos um
             tetraedro regular.''
+    \end{itemize}
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+        \coordinate (A) at (0.95, 3.62);
+        \coordinate (B) at (6.16, 1.35);
+        \coordinate (C) at (9.06, 4.79);
+        \coordinate (D) at (5.23, 9.14);
+        \draw (A) -- (B) -- (C) -- (D) -- (A);
+        \draw (B) -- (D);
+        \draw [dotted] (A) -- (C);
+        \filldraw [yellow!75,opacity=0.3] (A) -- (B) -- (D) -- cycle;
+        \filldraw [yellow!75,opacity=0.15] (B) -- (C) -- (D) -- cycle;
+        \node [left] at (A) {A};
+        \node [below] at (B) {B};
+        \node [right] at (C) {C};
+        \node [above] at (D) {D};
+
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Exercício 9-5}
+    \begin{itemize}
         \item Portanto, \(\vec{AB}\) e \(\vec{AD}\) são arestas de um triângulo equilátero:
-            % \begin{center}
-            %     \begin{tikzpicture}[scale=2]
-            %         \draw[thick] (0,0) coordinate[label=below:A] (A) --
-            %             (1,0) coordinate[label=below:B] (B) --
-            %             ($0.5*(1,0)+0.5*sqrt(3)*(0,1)$) coordinate[label=above:D] (D) --
-            %             cycle;
-            %         \draw[red] (0.15,0) arc (0:60:0.15);
-            %         \node[red,right] at (0.1,0.15) {$60^\circ$};
-            %     \end{tikzpicture}
-            % \end{center}
-        % \item Se o ângulo entre \(\vec{AB}\) e \(\vec{AD}\) é \SI{60}{\degree}, então o ângulo entre \(\vec{AB}\) e \(\vec{DA}\) é
-            % \(\SI{180}{\degree}-\SI{60}{\degree}=\SI{120}{\degree}\)
+    \begin{center}
+        \begin{tikzpicture}[scale=2]
+            \draw[thick] (0,0) coordinate[label=below:A] (A) --
+                (1,0) coordinate[label=below:B] (B) --
+                ($0.5*(1,0)+0.5*sqrt(3)*(0,1)$) coordinate[label=above:D] (C) --
+                cycle;
+            \draw[red] (0.15,0) arc (0:60:0.15);
+            \node[red,right] at (0.1,0.15) {$60^\circ$};
+        \end{tikzpicture}
+    \end{center}
         \item Como a aresta é unitária, temos que
             \(\vec{AB}\cdot\vec{DA}=1 \cdot 1 \cdot \cos{\SI{120}{\degree}}=-1/2\)
     \end{itemize}
@@ -181,100 +199,88 @@
 
 \end{frame}
 
-\begin{frame}[c]{Exercício 9-13}
-    \begin{enumerate}[(a)]
-        \item Obtenha os valores de norma \(3\sqrt{3}\) que são ortogonais a \(\vec{u}=(2,3,-1)\) e a
-            \(\vec{v}=(2,-4,6)\)
-        \item Qual dos vetores obtidos no item (a) forma ângulo agudo com \((1,0,0)\)
-    \end{enumerate}
+\begin{frame}{Exercício 9-36}
+    A figura 9-5a mostra um paralelepípedo retângulo. Sendo \(\alpha\) e \(\beta\) as medidas
+    dos ângulos indicados e \(\gamma\) a medida de \(A\hat{B}C\), mostre que \(\cos{\gamma}=\sen{\alpha}\sen{\beta}\)
+
+    \centering
+    \begin{tikzpicture}
+        \coordinate (A) at (1.38,4.24);
+        \coordinate (B) at (1.34,7.93);
+        \coordinate (C) at (2.61,9.20);
+        \coordinate (D) at (8.48,9.28);
+        \coordinate (E) at (7.27,7.95);
+        \coordinate (F) at (7.27,4.32);
+        \coordinate (G) at (8.54,5.66);
+        \coordinate (H) at (8.54,8.03);
+        \coordinate (I) at (1.36,5.19);
+        \coordinate (J) at (2.65,5.57);
+        % \foreach \i in {A,..., J} {\node [red] at (\i) {\i};}
+
+        \node [above] at (C) {B};
+        \node [right] at (H) {C};
+        \node [left] at (I) {A};
+
+        \draw [blue] (A) -- (B) -- (C) -- (D) -- (G) -- (F) -- cycle;
+        \draw [blue] (B) -- (E) -- (D);
+        \draw [blue] (E) -- (F);
+        \draw [blue, dotted] (A) -- (J) -- (C) (J) -- (G);
+        \draw [blue, dotted] (C) -- (I);
+        \draw [blue, dotted] (C) -- (H);
+
+        \coordinate (P1) at ($(C)!0.2!(I)$);
+        \coordinate (P2) at ($(C)!0.2!(H)$);
+        \node [shift={(-2ex,-0.5ex)}] at (P1) {\small$\alpha$};
+        \node [shift={(1.5ex,0.1ex)}] at (P2) {\small$\beta$};
+        \node [left, red] at (B) {J};
+        \node [right, red] at (D) {I};
+        \node [below right, xshift=-0.5ex, red] at (J) {K};
+        \begin{scope}
+            \clip (C) -- (D) -- (H);
+            \filldraw [blue, opacity=0.1] let \p1=($(C)-(P2)$) in (C) circle ({veclen(\x1,\y1)});
+        \end{scope}
+
+        \begin{scope}
+            \clip (C) -- (B) -- (I);
+            \filldraw [blue, opacity=0.1] let \p1=($(C)-(P1)$) in (C) circle ({veclen(\x1,\y1)});
+        \end{scope}
+    \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Exercício 9-13}
+\begin{frame}{Exercício 9-47}
+    Prove que são verdadeiras as seguintes afirmações:
     \begin{itemize}
-        \item Considere que os vetores procurados têm a forma \(\vec{w}=(x,y,z)\)
-        \item Assim, temos o sistema de equações:
-            \[
-                \begin{cases}
-                    2x+3y-z&=0 \\ 2x-4y+6z&=0 \\ \sqrt{x^2+y^2+z^2}&=3\sqrt{3}
-                \end{cases}
-            \]
-            onde a primeira e segunda equação saem da condição de ortogonalidade e a terceira do módulo (norma) de \(\vec{w}\)
-        \item ''Resolvendo'' as duas primeiras equações, temos que:
-            \[
-                \begin{cases}
-                    \alert{2x}+3y-z&=0 \\ \alert{2x}-4y+6z&=0
-                \end{cases}
-                \implies 4y-6z=-3y+z \implies 7y=7z \implies y=z
-            \]
-        \item Além disso, temos que \(x=-y\)
+        \item \(\vec{AB}\cdot \vec{CD}+\vec{BC}\cdot\vec{AD}+\vec{CA}\cdot\vec{BD}=0\), quaisquer que sejam os pontos
+            \(A\), \(B\), \(C\) e \(D\) (\textbf{Relação de Euler})
+        \item Se um tetraedro tem dois pares de arestas opostas diagonais, as duas arestas restantes são
+            ortogonais
+        \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
+            do triângulo
     \end{itemize}
 
+    \centering
+    \begin{tikzpicture}[scale=0.3]
+        \coordinate (A) at (0.95, 3.62);
+        \coordinate (B) at (6.16, 1.35);
+        \coordinate (C) at (9.06, 4.79);
+        \coordinate (D) at (5.23, 9.14);
+        \draw (A) -- (B) -- (C) -- (D) -- (A);
+        \draw (B) -- (D);
+        \draw [dotted] (A) -- (C);
+        \filldraw [yellow!75,opacity=0.3] (A) -- (B) -- (D) -- cycle;
+        \filldraw [yellow!75,opacity=0.15] (B) -- (C) -- (D) -- cycle;
+        \node [left] at (A) {A};
+        \node [below] at (B) {B};
+        \node [right] at (C) {C};
+        \node [above] at (D) {D};
+
+    \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Estudo dirigido}
     \begin{itemize}
-        \item Como \(x=-y\) e \(z=y\), podemos resolver a terceira equação:
-            \[
-                \sqrt{x^2+y^2+z^2}=3\sqrt{3} \implies
-                \sqrt{(-y)^2+y^2+y^2}=3\sqrt{3} \implies
-                \sqrt{3y^2}=3\sqrt{3}
-            \]
-            \[
-                \sqrt{y^2}=3 \implies y=\pm 3
-            \]
-        \item Assim, temos que a resposta de \alert{a)} é \(\vec{w}=(-3,3,3)\) ou \(\vec{w}=(3,-3,-3)\)
-        \item b) Um ângulo agudo é um ângulo menor que \SI{90}{\degree} e \(\cos{\theta} > 0\) quando \( 0 \leq \theta < \SI{90}{\degree}\)
-        \item Como \((x,y,z) \cdot (1,0,0)=x\), então somente \((3,-3,-3)\) faz um ângulo agudo com \((1,0,0)\)
+        \item Leia o assunto da Definição 9-12 e da Proposição 9-13 do livro texto (páginas 82 e 83)
+        \item Resolva os exercícios 9-53 e 9-54, tirando dúvidas com o professor quando necessário
+        \item Esses dois exercícios farão parte da lista da segunda prova
     \end{itemize}
 \end{frame}
-
-\begin{frame}[c]{Exercício 9-18}
-    Descreva o conjunto de todos os vetores \(\vec{w}\) ortogonais a \(\vec{v}=(2,1,2)\) tais que
-    \(\vec{u}=(1,1,-1)\) seja combinação linear de \(\vec{v}\), \(\vec{w}\)
-\end{frame}
-
-\begin{frame}{Exercício 9-18}
-    \begin{itemize}
-        \item Considere que \(\vec{w}=(x,y,z)\)
-        \item Para \(\vec{w}\) ser ortogonal a \(\vec{v}=(2,1,2)\) temos que
-            \[
-                \vec{w}\cdot \vec{v}=0 \implies 2x+y+2z=0
-            \]
-        \item Para \(\vec{u}\) ser combinação linear de \(\vec{v}\) e \(\vec{w}\), deve existir \(a\) e \(b\) tal que
-            \[
-                (1,1,-1)=a(2,1,2)+b(x,y,z) \implies
-                \begin{cases}
-                    2a+bx &= 1 \\ a+by&=1 \\ 2a+bz&=-1
-                \end{cases}
-            \]
-        \item Desse sistema temos que
-            \[
-                2(2a+bx)+(a+by)+2(2a+bz)=2+1-2=1 \implies 9a + b(2x+y+2z)=1 \implies a=\frac{1}{9}
-            \]
-    \end{itemize}
-
-\end{frame}
-
-\begin{frame}{}
-    \begin{itemize}
-        \item Substituindo \(a=1/9\) em
-            \[
-                \begin{cases}
-                    2a+bx &= 1 \\ a+by&=1 \\ 2a+bz&=-1
-                \end{cases}
-            \]
-        \item[]
-            e isolando \(x\), \(y\) e \(z\), temos que
-            \[
-                \begin{cases}
-                    x&=\frac{7}{9b} \\ y&=\frac{8}{9b} \\ z&=-\frac{11}{9b}
-                \end{cases}
-            \]
-        \item Ou seja,
-            \[
-                \vec{w}=\frac{1}{9b}(7,8,-11)=\lambda (7,8,-11)
-            \]
-
-    \end{itemize}
-\end{frame}
-
