@@ -167,7 +167,7 @@
 
 \begin{frame}[c]{Exercício 9-7}
     São dados os números reais positivos \(a\) e \(b\), e o vetor \(\vec{u}\), de norma \(a\).
-    Dentre os vetores de norma \(b\), qual é o que torna máximo o produto escalar \(\vec{u}\cdot\vec{v}\)?
+    Dentre os \(\vec{v}\) vetores de norma \(b\), qual é o que torna máximo o produto escalar \(\vec{u}\cdot\vec{v}\)?
     E mínimo? Quais são esses valores máximo e mínimo?
 \end{frame}
 
@@ -182,21 +182,87 @@
             \cos{\theta}=1 \implies\theta=\SI{0}{\degree}\)
         \item \(\theta=\SI{0}{\degree} \implies \) vetores com mesmo sentido e direção
         \item \(\theta=\SI{180}{\degree} \implies \) vetores com mesma direção e sentidos opostos
-        \item Assim, o vetor \(\vec{v}\) que dá o maior produto escalar é um vetor \textbf{paralelo} a \(\vec{u}\) com módulo \(b\), ou seja,
-            \[
-                \vec{v}=\frac{b}{a}\vec{u}
-            \]
-            de acordo com a definição de produto de um escalar por vetor e \(
-            \vec{u}\cdot\vec{v}=ab\)
+        \item Assim, o vetor \(\vec{v}\) que dá o maior produto escalar é um vetor \textbf{paralelo} a \(\vec{u}\)
+            % com módulo \(b\), ou seja,
+            % \[
+            %     \vec{v}=\frac{b}{a}\vec{u}
+            % \]
+            % de acordo com a definição de produto de um escalar por vetor
+            e \( \vec{u}\cdot\vec{v}=ab\)
 
-        \item Analogamente, o vetor \(\vec{v}\) que dá o menor produto escalar é um vetor \textbf{antiparalelo} a \(\vec{u}\) com módulo \(b\), ou seja,
-            \[
-                \vec{v}=-\frac{b}{a}\vec{u}
-            \]
-            de acordo com a definição de produto de um escalar por vetor e \(
-            \vec{u}\cdot\vec{v}=-ab\)
+        \item Analogamente, o vetor \(\vec{v}\) que dá o menor produto escalar é um vetor \textbf{antiparalelo} a \(\vec{u}\)
+            % com módulo \(b\), ou seja,
+            % \[
+            %     \vec{v}=-\frac{b}{a}\vec{u}
+            % \]
+            % de acordo com a definição de produto de um escalar por vetor
+            e \( \vec{u}\cdot\vec{v}=-ab\)
     \end{itemize}
 
+\end{frame}
+
+\begin{frame}{Exercício 9-47}
+    Prove que são verdadeiras as seguintes afirmações:
+    \begin{itemize}
+        \item \(\vec{AB}\cdot \vec{CD}+\vec{BC}\cdot\vec{AD}+\vec{CA}\cdot\vec{BD}=0\), quaisquer que sejam os pontos
+            \(A\), \(B\), \(C\) e \(D\) (\textbf{Relação de Euler})
+        \item Se um tetraedro tem dois pares de arestas opostas diagonais, as duas arestas restantes são
+            ortogonais
+        \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
+            do triângulo
+    \end{itemize}
+
+    \centering
+    \begin{tikzpicture}[scale=0.3]
+        \coordinate (A) at (0.95, 3.62);
+        \coordinate (B) at (6.16, 1.35);
+        \coordinate (C) at (9.06, 4.79);
+        \coordinate (D) at (5.23, 9.14);
+        \draw (A) -- (B) -- (C) -- (D) -- (A);
+        \draw (B) -- (D);
+        \draw [dotted] (A) -- (C);
+        \filldraw [yellow!75,opacity=0.3] (A) -- (B) -- (D) -- cycle;
+        \filldraw [yellow!75,opacity=0.15] (B) -- (C) -- (D) -- cycle;
+        \node [left] at (A) {A};
+        \node [below] at (B) {B};
+        \node [right] at (C) {C};
+        \node [above] at (D) {D};
+
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Exercício 9-50}
+    Na Figura 9-3, a circunferência de centro \(O\) tem raio \(r\). Calcule \(\vec{BA}\cdot\vec{BC}\) em
+    função de \(r\) e das medidas \(\alpha\) e \(\beta\) dos ângulos indicados. Aplique o resultado para
+    provar que todo ângulo inscrito em uma semicircunferência é reto.
+
+    \centering
+    \begin{tikzpicture}[scale=1/3]
+        \coordinate (A) at (0,0);
+        \coordinate (O) at (8,0);
+        \coordinate (B) at ($(O) + 8*({cos(60)},{sin(60)})$);
+        \coordinate (C) at ($(O) + 8*({cos(30)},{-sin(30)})$);
+
+        \draw [red] (O) circle (8);
+        \draw [red] (A) -- +(16,0);
+        \draw [red] (O) -- (B);
+        \draw [red] (O) -- (C);
+        \node [red, left] at (A) {A};
+        \node [red,below] at (O) {O};
+        \node [red, above right, shift={(-2pt,-2pt)}] at (B) {B};
+        \node [red, below right, shift={(-2pt, 2pt)}] at (C) {C};
+        \draw [red] (O) ++(3,0) arc (0:60:3) node [midway, shift={(3pt,3pt)}] {$\alpha$};
+        \draw [red] (O) ++(3,0) arc (0:-30:3) node [midway, shift={(3pt,-2pt)}] {$\beta$};
+
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Estudo dirigido}
+    \begin{itemize}
+        \item Leia o assunto da Definição 9-12 e da Proposição 9-13 do livro texto (páginas 82 e 83)
+        \item Resolva os exercícios 9-53 e 9-54, tirando dúvidas com o professor quando necessário
+        \item Esses dois exercícios farão parte da lista da segunda prova
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Exercício 9-36}
@@ -232,9 +298,9 @@
         \coordinate (P2) at ($(C)!0.2!(H)$);
         \node [shift={(-2ex,-0.5ex)}] at (P1) {\small$\alpha$};
         \node [shift={(1.5ex,0.1ex)}] at (P2) {\small$\beta$};
-        \node [left, red] at (B) {J};
-        \node [right, red] at (D) {I};
-        \node [below right, xshift=-0.5ex, red] at (J) {K};
+        % \node [left, red] at (B) {J};
+        % \node [right, red] at (D) {I};
+        % \node [below right, xshift=-0.5ex, red] at (J) {K};
         \begin{scope}
             \clip (C) -- (D) -- (H);
             \filldraw [blue, opacity=0.1] let \p1=($(C)-(P2)$) in (C) circle ({veclen(\x1,\y1)});
@@ -247,40 +313,3 @@
     \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Exercício 9-47}
-    Prove que são verdadeiras as seguintes afirmações:
-    \begin{itemize}
-        \item \(\vec{AB}\cdot \vec{CD}+\vec{BC}\cdot\vec{AD}+\vec{CA}\cdot\vec{BD}=0\), quaisquer que sejam os pontos
-            \(A\), \(B\), \(C\) e \(D\) (\textbf{Relação de Euler})
-        \item Se um tetraedro tem dois pares de arestas opostas diagonais, as duas arestas restantes são
-            ortogonais
-        \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
-            do triângulo
-    \end{itemize}
-
-    \centering
-    \begin{tikzpicture}[scale=0.3]
-        \coordinate (A) at (0.95, 3.62);
-        \coordinate (B) at (6.16, 1.35);
-        \coordinate (C) at (9.06, 4.79);
-        \coordinate (D) at (5.23, 9.14);
-        \draw (A) -- (B) -- (C) -- (D) -- (A);
-        \draw (B) -- (D);
-        \draw [dotted] (A) -- (C);
-        \filldraw [yellow!75,opacity=0.3] (A) -- (B) -- (D) -- cycle;
-        \filldraw [yellow!75,opacity=0.15] (B) -- (C) -- (D) -- cycle;
-        \node [left] at (A) {A};
-        \node [below] at (B) {B};
-        \node [right] at (C) {C};
-        \node [above] at (D) {D};
-
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Estudo dirigido}
-    \begin{itemize}
-        \item Leia o assunto da Definição 9-12 e da Proposição 9-13 do livro texto (páginas 82 e 83)
-        \item Resolva os exercícios 9-53 e 9-54, tirando dúvidas com o professor quando necessário
-        \item Esses dois exercícios farão parte da lista da segunda prova
-    \end{itemize}
-\end{frame}
