@@ -167,7 +167,7 @@
 
 \begin{frame}[c]{Exercício 9-7}
     São dados os números reais positivos \(a\) e \(b\), e o vetor \(\vec{u}\), de norma \(a\).
-    Dentre os \(\vec{v}\) vetores de norma \(b\), qual é o que torna máximo o produto escalar \(\vec{u}\cdot\vec{v}\)?
+    Dentre os vetores \(\vec{v}\) de norma \(b\), qual é o que torna máximo o produto escalar \(\vec{u}\cdot\vec{v}\)?
     E mínimo? Quais são esses valores máximo e mínimo?
 \end{frame}
 
@@ -208,8 +208,8 @@
             \(A\), \(B\), \(C\) e \(D\) (\textbf{Relação de Euler})
         \item Se um tetraedro tem dois pares de arestas opostas diagonais, as duas arestas restantes são
             ortogonais
-        \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
-            do triângulo
+        % \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
+        %     do triângulo
     \end{itemize}
 
     \centering
@@ -313,3 +313,98 @@
     \end{tikzpicture}
 \end{frame}
 
+\section{Produto vetorial}
+
+\begin{frame}{Bases positivas e negativas\footnote{A convenção usada é a mais comum onde bases positivas são
+            bases destras, entretanto não é obrigatória. Ver discussão na página 100 do livro texto}}
+    \begin{itemize}
+        \item Consideremos os vetores \(\vec{OA}\), \(\vec{OB}\) e \(\vec{OC}\) de uma \textbf{base}
+            desenhados \textbf{com a mesma origem}
+
+            \begin{columns}[T]
+                \begin{column}{0.35\textwidth}
+                    \begin{tikzpicture}[scale=1/2]
+                        \foreach \a/\l in {90/C,220/A,320/B} {
+                            \draw [->] (0,0) -- +(\a:5) coordinate (\l);
+                        }
+                        \node [above right] at (0,0) {O};
+                        \node [right] at (B) {B};
+                        \node [left] at (A) {A};
+                        \node [above] at (C) {C};
+                    \end{tikzpicture}
+                \end{column}
+
+                \begin{column}{0.55\textwidth}
+                \item A base é \textbf{positiva} se ao girarmos o primeiro vetor na direção
+                    do segundo, em torno do terceiro, o sentido for \textbf{anti-horário}
+                \item Caso contrário, temos uma base \textbf{negativa}
+                \item Por exemplo
+                    \begin{itemize}
+                        \item A base \((\vec{OA},\vec{OB},\vec{OC})\) é positiva
+                        \item A base \((\vec{OB},\vec{OA},\vec{OC})\) é negativa
+                        \item A base \((\vec{OA},\vec{OC},\vec{OB})\) é negativa
+                        \item A base \((\vec{OB},\vec{OC},\vec{OA})\) é positiva
+                    \end{itemize}
+                \end{column}
+            \end{columns}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Produto vetorial}
+    O \textbf{produto vetorial} de \(\vec{u}\) por \(\vec{v}\) é o vetor, indicado por
+    \(\vec{u}\wedge\vec{v}\) \textcolor{blue}{ou \(\vec{u}\times\vec{v}\)}, tal que
+    \begin{itemize}
+        \item se \((\vec{u},\vec{v})\) é LD, então \(\vec{u}\wedge\vec{v}=\vec{0}\)
+        \item se \((\vec{u},\vec{v})\) é LI e \(\theta\) é a medida angular entre \(\vec{u}\) e \(\vec{v}\),
+            então
+            \begin{itemize}
+                \item \(||\vec{u}\wedge\vec{v}||=||\vec{u}||~||\vec{v}||~\sen{\theta}\)
+                \item \(\vec{u}\wedge\vec{v}\) é ortogonal a \(\vec{u}\) e a \(\vec{v}\)
+                \item \((\vec{u},\vec{v}, \vec{u}\wedge\vec{v})\) é uma base positiva
+            \end{itemize}
+    \end{itemize}
+
+    \vspace{1cm}
+    \pause
+    Seja \(B=(\vec{i},\vec{j},\vec{k})\) uma \textit{base ortonormal positiva}. Se \(\vec{u}=(a_1,b_1,c_1)_B\) e
+    \(\vec{v}=(a_2,b_2,c_2)_B\) então
+    \[
+        \vec{u}\wedge\vec{v}=
+        \begin{vmatrix}
+            \vec{i} & \vec{j} & \vec{k} \\
+            a_1 & b_1 & c_1 \\
+            a_2 & b_2 & c_2
+        \end{vmatrix}
+    \]
+
+    Exercícios 11-14, 11-17, 11-18 e 11-19
+\end{frame}
+
+\begin{frame}{Propriedade do produto vetorial}
+    Quaisquer que sejam os vetores \(\vec{u}\), \(\vec{v}\) e \(\vec{w}\) e qualquer que seja o número real \(\lambda\)
+    \begin{itemize}
+        \item \(\vec{u}\wedge\vec{v}=-\vec{v}\wedge\vec{u}\)
+        \item \(\vec{u}\wedge(\lambda\vec{v})=(\lambda\vec{u})\wedge\vec{v}=\lambda(\vec{u}\wedge\vec{v})\)
+        \item \(\vec{u}\wedge(\vec{v}+\vec{w})=\vec{u}\wedge\vec{v}+\vec{u}\wedge\vec{w}\)
+        \item \((\vec{u}+\vec{v})\wedge \vec{w}=\vec{u}\wedge\vec{w}+\vec{v}\wedge\vec{w}\)
+    \end{itemize}
+
+    \begin{block}{}
+        \begin{itemize}
+            \item O produto vetorial não é associativo, ou seja, \((\vec{u}\wedge\vec{v})\wedge\vec{w}\) não é necessariamente igual a
+                \(\vec{u}\wedge(\vec{v}\wedge\vec{w})\)
+
+            \item Pode-se demonstrar que:
+                \begin{itemize}
+                    \item \((\vec{u}\wedge\vec{v})\wedge\vec{w}=-(\vec{v}\cdot\vec{w})\vec{u}+(\vec{u}\cdot\vec{w})\vec{v}\)
+                    \item Determine \(\vec{u}\wedge(\vec{v}\wedge\vec{w})\)
+                    \item Prove a identidade de Jacobi:
+                        \[
+                        (\vec{u}\wedge\vec{v})\wedge\vec{w}+
+                        (\vec{v}\wedge\vec{w})\wedge\vec{u}+
+                        (\vec{w}\wedge\vec{u})\wedge\vec{v}=\vec{0}
+                    \]
+                \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
