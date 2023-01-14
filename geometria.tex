@@ -4,6 +4,14 @@ brazilian,% Brazilian Portuguese, FTW!
 aspectratio=169% Aspect ratio 16:9 (widescreen)
 ]{beamer}
 
+\usetheme{Boadilla}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{page number in head/foot}[framenumber]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}[circle]
+\setbeamercovered{transparent}
+
 \usepackage{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -13,8 +21,7 @@ aspectratio=169% Aspect ratio 16:9 (widescreen)
 \usepackage{tikz}
 
 \usepackage{amssymb,amsfonts,amsmath}
-
-\usepackage{tcolorbox}
+\usepackage{mathtools}
 
 \usepackage{siunitx}
 
@@ -25,16 +32,8 @@ aspectratio=169% Aspect ratio 16:9 (widescreen)
 \sisetup{locale = FR}
 \DeclareMathOperator{\sen}{sen}
 \renewcommand{\vec}[1]{\overrightarrow{#1}}
-\tcbset{boxrule=0pt, top=0pt, bottom=0pt}
-
-\usetheme{Boadilla}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{frametitle continuation}{}
-\setbeamertemplate{page number in head/foot}[framenumber]
-\setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{itemize items}[circle]
-\setbeamercovered{transparent}
 %--------------------------------------------------
+
 \def\Disciplina{Geometria Analítica}
 \def\Professor{Rodrigo de Farias Gomes}
 \def\Periodo{Período 2022.1}
@@ -43,9 +42,12 @@ aspectratio=169% Aspect ratio 16:9 (widescreen)
 \author{\Professor}
 \date{\Periodo}
 
+\usepackage{tcolorbox}
+\tcbset{boxrule=0pt, top=0pt, bottom=0pt}
+
 \begin{document}
 
-\include{include/parte01}
+% \include{include/parte01}
 \include{include/parte02}
 
 \end{document}

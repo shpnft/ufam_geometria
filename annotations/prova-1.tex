@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper,brazilian, fleqn]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsfonts,amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections}
+
+\usepackage{tcolorbox}
+\tcbset{boxrule=0pt, top=0pt, bottom=0pt}
+
+\DeclareMathOperator{\sen}{sen}
+
+%https://tex.stackexchange.com/a/100406
+%29.7 cm - 1cm - 1cm - 144.90/28.4 cm = 22.60 cm
+\usepackage[a4paper, totalheight=22.60cm,includeheadfoot,left=1.5cm, right=1.0cm, top=1cm]{geometry}
+\setlength{\headheight}{144.90pt}
+
+\setkeys{Gin}{keepaspectratio}
+
+\newcommand{\cabeca}{
+    \begin{tikzpicture}
+        \node(Logo) {\includegraphics[width=2.5cm]{logo.png}};
+        % \node(Logo) {\includegraphics[width=4.1cm]{logo.png}};
+
+        \node(Local) at (Logo.north east) [anchor=north west, yshift=-0.25cm,
+            align=center, execute at begin node=\setlength{\baselineskip}{3ex}]
+            {
+                \huge{\textbf{Universidade Federal do Amazonas}} \\
+                \large{\textbf{Instituto de Ciências Exatas e Tecnologia}} \\
+                \large{\textbf{\Description}}
+            };
+
+        \node(Ident) at (Local.south west) [anchor=north west, yshift=-0.25cm,
+            align=left, execute at begin node=\setlength{\baselineskip}{2em}]
+            {
+                Professor: {\fontfamily{augie}\selectfont \Professor} \\
+                Aluno:
+            };
+        % \draw [thick] (Logo.south west) -- ($(Logo.south west -| Local.south east)$);
+        % \draw [red] (Logo.north west) rectangle (Logo.south east);
+        % \draw [blue] (Local.north west) rectangle (Local.south east);
+        % \draw [green] (Ident.north west) rectangle (Ident.south east);
+    \end{tikzpicture}
+}
+
+\usepackage{fancyhdr}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[c]{\cabeca}
+\fancyfoot[r]{\fontfamily{augie}\selectfont Boa sorte!}
+
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\ratio}[1]{(#1\% da nota)}
+%-----------------------------------CUT HERE-----------------------------------
+
+\def\Description{Geometria Analítica -- Prova 1 16/12/2022}
+\def\Professor{Rodrigo de Farias Gomes}
+
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+
+\begin{document}
+
+\begin{tcolorbox}[colback=black!10, colframe=black!50, title=Observações]
+    \begin{itemize}
+        \item Todas as páginas com resposta devem ter o nome e matrícula do aluno
+            escritos com caneta no início (cabeçalho) ou no final (rodapé). Páginas
+            que não obedeçam a esse critério não serão usadas na avaliação
+        \item As respostas podem ser escritas com lápis desde que legível
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \ratio{30} Determine \(\vec{x}\) com o auxílio da Figura 1
+        \begin{enumerate}
+            \item \(\vec{x}=\vec{HE}-\vec{BD}\)
+            \item \(\vec{x}=\vec{AB}+\vec{EH}\)
+            \item \(\vec{x}=\vec{AF}+\vec{GH}\)
+        \end{enumerate}
+    \item \ratio{40} No tetraedro \(ABCD\) (Figura 2), sejam \(M\), \(N\) e \(P\), respectivamente,
+        os pontos médios de \(BC\), \(CD\) e \(AC\), e \(G\) o baricentro do triângulo \(MNP\).
+        \begin{enumerate}
+            \item Mostre que \(\vec{CG}=\dfrac{1}{6}(\vec{CA}+\vec{CB}+\vec{CD})\)
+            \item Mostre que \(m=2\) para que o ponto \(H=C+m\vec{CG}\) pertença ao plano da face \(ABD\)
+            \item (2 pontos extras) Mostre que o ponto \(H\) do item anterior é baricentro do triângulo \(ABD\)
+        \end{enumerate}
+
+    \item \ratio{30} Em cada caso, calcule \(m\) para que os vetores sejam LD
+        \begin{enumerate}
+            \item \(\vec{u}=(m,1,m),~\vec{v}=(1,m,1)\)
+            \item \(\vec{u}=(1-m^2,1-m,0),~\vec{v}=(m,m,m)\)
+            \item \(\vec{u}=(m,1,m+1),~\vec{v}=(1,2,m),~\vec{w}=(1,1,1)\)
+            \item \(\vec{u}=(m,1,m+1),~\vec{v}=(0,1,m),~\vec{w}=(0,m,2m)\)
+        \end{enumerate}
+\end{enumerate}
+
+\centering
+\begin{tikzpicture}[>=stealth, scale=0.9]
+    \coordinate (A) at (0.35,0.56);
+    \coordinate (B) at (2.19,0.56);
+    \coordinate (C) at (1.3,4.75);
+    \coordinate (D) at (3.14,4.75);
+    \coordinate (E) at (2.65,5.75);
+    \coordinate (F) at (4.49,5.75);
+    \coordinate (G) at (3.55,1.55);
+    \coordinate (H) at (1.71,1.55);
+
+    \foreach \a/\b in {A/B,A/C,C/D,C/E,E/F,F/D,G/F,B/G,B/D}{
+        \draw [thick] (\a) -- (\b);
+    }
+    \foreach \b in {G,A,E} {
+        \draw [thick, dotted] (H) -- (\b);
+    }
+
+    \node [below left]  at (A) {A};
+    \node [below right] at (B) {B};
+    \foreach \a in {C,...,H} \node [above left] at (\a) {\a};
+
+    \path (A) -- (A -| F) node [yshift=-1cm,shape=rectangle,fill=black!5,midway] {Figura 1};
+\end{tikzpicture}
+%
+\hspace{3cm}%
+%
+\begin{tikzpicture}[scale=1.6*0.9]
+    \coordinate (A) at (2.35, 3.6);
+    \coordinate (B) at (2.75,0.4);
+    \coordinate (C) at (3.8,1.09);
+    \coordinate (D) at (0.6,0.95);
+    \node [above]  at (A) {A};
+    \node [below]  at (B) {B};
+    \node [right]  at (C) {C};
+    \node [left]   at (D) {D};
+
+    \draw [thick, fill=gray!20] (A) -- (B) -- (D) -- cycle;
+    \draw [thick] (B) -- (C) -- (A);
+
+    \draw [thick, dotted] (C) -- (D);
+
+    \path (B -| D) -- (B -| C) node [yshift=-1cm,shape=rectangle,fill=black!5,midway] {Figura 2};
+\end{tikzpicture}
+
+\end{document}

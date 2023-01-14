@@ -360,7 +360,8 @@
             \begin{itemize}
                 \item \(||\vec{u}\wedge\vec{v}||=||\vec{u}||~||\vec{v}||~\sen{\theta}\)
                 \item \(\vec{u}\wedge\vec{v}\) é ortogonal a \(\vec{u}\) e a \(\vec{v}\)
-                \item \((\vec{u},\vec{v}, \vec{u}\wedge\vec{v})\) é uma base positiva
+                \item \((\vec{u},\vec{v}, \vec{u}\wedge\vec{v})\) é uma base positiva 
+                    \(\implies \vec{u}\wedge\vec{v}=-\vec{v}\wedge\vec{u}\)
             \end{itemize}
     \end{itemize}
 
@@ -377,34 +378,122 @@
         \end{vmatrix}
     \]
 
-    Exercícios 11-14, 11-17, 11-18 e 11-19
+    Exercícios 11-14, 11-17, 11-18, 11-19 e \textbf{11-28}
 \end{frame}
 
-\begin{frame}{Propriedade do produto vetorial}
-    Quaisquer que sejam os vetores \(\vec{u}\), \(\vec{v}\) e \(\vec{w}\) e qualquer que seja o número real \(\lambda\)
+\begin{frame}{Atividade -- Sistema de coordenadas}
     \begin{itemize}
-        \item \(\vec{u}\wedge\vec{v}=-\vec{v}\wedge\vec{u}\)
-        \item \(\vec{u}\wedge(\lambda\vec{v})=(\lambda\vec{u})\wedge\vec{v}=\lambda(\vec{u}\wedge\vec{v})\)
-        \item \(\vec{u}\wedge(\vec{v}+\vec{w})=\vec{u}\wedge\vec{v}+\vec{u}\wedge\vec{w}\)
-        \item \((\vec{u}+\vec{v})\wedge \vec{w}=\vec{u}\wedge\vec{w}+\vec{v}\wedge\vec{w}\)
+        \item Vale 20\% da \(N_2\)
+        \item Trabalho individual
+        \item Usando
+            \begin{itemize}
+                \item Definição 13-1
+                \item Observação 13-2
+                \item Proposição 13-4
+                \item Exercícios Resolvidos 13-5, 13-6 e 13-7
+            \end{itemize}
+            resolva os exercícios 13-7, 13-8 e 13-9 letra a (não é necessário a letra b), solicitando a ajuda do
+            professor quando necessário
+        \item Data de entrega: primeira aula de janeiro de 2023
     \end{itemize}
+\end{frame}
 
-    \begin{block}{}
-        \begin{itemize}
-            \item O produto vetorial não é associativo, ou seja, \((\vec{u}\wedge\vec{v})\wedge\vec{w}\) não é necessariamente igual a
-                \(\vec{u}\wedge(\vec{v}\wedge\vec{w})\)
+\begin{frame}{Resumão de sistema de coordenadas}
+    \begin{itemize}
+        \item Seja \(O\) um ponto e \(E=(\vec{e_1},\vec{e_2},\vec{e_3})\) uma base
+        \item O par ordenado \(\Sigma = (O,E)\) é chamado de \textbf{sistema de coordenadas} de \textbf{origem} 
+            \(O\) e \textbf{base} E. Se \(E\) é ortonormal, \(\Sigma\) é ortogonal
+        \item Podemos escrever \((O,E)\) como \((O,\vec{e_1},\vec{e_2},\vec{e_3})\)
+        \item Dado um ponto \(P\), \textcolor{blue}{as coordenadas do vetor \(\vec{OP}\) são as coordenadas do ponto \(P\)}
+        \item Tome cuidado: o \textbf{vetor} \(\vec{v}=(1,2,3)\) é diferente do \textbf{ponto} \(P=(1,2,3)\) \alert{(Por quê?)}
+        \item Eixo coordenado é uma reta que contém o ponto \(O\) e é paralela a um dos vetores da base \(E\)
+        \item Assim, temos 3 eixos\footnote{A nomenclatura usada no livro é muito ingênua e, possivelmente, imprecisa...}:
+            \(Ox\) que é paralelo a \(\vec{e_1}\), \(Oy\) que é paralelo a \(\vec{e_2}\) e \(Oz\) que é paralelo a \(\vec{e_3}\)
+        \item Os planos coordenados são: \(Oxy\) formado pelos eixos \(Ox\) e \(Oy\), 
+            \(Oxz\) formado pelos eixos \(Ox\) e \(Oz\) e
+            \(Oyz\) formado pelos eixos \(Oy\) e \(Oz\) e
+    \end{itemize}
+\end{frame}
 
-            \item Pode-se demonstrar que:
-                \begin{itemize}
-                    \item \((\vec{u}\wedge\vec{v})\wedge\vec{w}=-(\vec{v}\cdot\vec{w})\vec{u}+(\vec{u}\cdot\vec{w})\vec{v}\)
-                    \item Determine \(\vec{u}\wedge(\vec{v}\wedge\vec{w})\)
-                    \item Prove a identidade de Jacobi:
-                        \[
-                        (\vec{u}\wedge\vec{v})\wedge\vec{w}+
-                        (\vec{v}\wedge\vec{w})\wedge\vec{u}+
-                        (\vec{w}\wedge\vec{u})\wedge\vec{v}=\vec{0}
-                    \]
-                \end{itemize}
-        \end{itemize}
-    \end{block}
+% \begin{frame}{Algumas perguntas...}
+%     \begin{enumerate}[{13-}1]
+%         \item Como você pode reconhecer, pelas coordenadas, que um ponto pertence a um dos eixos coordenados? 
+%             E a um dos planos coordenados?
+%         \item Se o sistema é ortogonal, quais são as coordenadas dos pontos simétricos de \(P=(x,y,z)\) em
+%             relação a cada plano coordenado?
+%         \item Se o sistema é ortogonal, quais são as coordenadas dos pontos simétricos de \(P=(x,y,z)\) em relação a
+%             cada eixo coordenado?
+%         \item Quais são as coordenadas do ponto simétrico de \(P=(x,y,z)\) em relação à origem do sistema?
+%     \end{enumerate}
+%     \begin{tcolorbox}[title="Ponto simétrico"]
+%         \begin{itemize}
+%             \item Dizemos que dois pontos \(A\) e \(A'\) são simétricos em relação a um terceiro
+%         ponto \(O\), quando \(O\) é ponto médio do segmento que une \(A\) e \(A'\)
+
+%     \item Se ao invés de um ponto \(O\) tivermos uma reta ou plano, basta determinar um ponto da reta ou plano
+%         tal que  segmento unindo os pontos \(A\) e \(A'\) seja perpendicular a essa reta ou plano
+%         \end{itemize}
+%     \end{tcolorbox}
+% \end{frame}
+
+\begin{frame}{Qual é o certo?}
+    Esse?
+    \begin{center}
+        \begin{tikzpicture}[scale=4]
+            \coordinate (O) at (0,0,0);
+            \node [above left] at (O) {O};
+            \draw[thick,->, green!50!black] (O) -- (0,1,0) node [above] {\(z\)};
+            \draw[thick,->, blue] (O) -- (1,0,0) node [right] {\(y\)};
+            \draw[thick,->,  red] (O) -- (0,0,1) node [left]  {\(x\)};
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Qual é o certo?}
+    Ou esse?
+    \begin{center}
+        \begin{tikzpicture}[scale=4]
+            \coordinate (O) at (0,0,0);
+            \node [above left] at (O) {O};
+            \draw[thick,->, green!50!black] (O) -- (0,1,0) node [above] {\(z\)};
+            \draw[thick,->, blue] (O) -- (1,0,0) node [right] {\(x\)};
+            \draw[thick,->,  red] (O) -- (0,0,1) node [left]  {\(y\)};
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+% \begin{frame}{Finalmente...}
+%     Se \(P=(x,y,z)\) é um dos vértices de um cubo de centro \(O\) e faces paralelas aos
+%     planos coordenados, escreva as triplas de coordenadas dos outros sete vértices
+%     \begin{center}
+%         \begin{tikzpicture}[scale=2]
+%             % \draw[thick,->, red] (0,0,0) node [above left, black] {O} -- (2,0,0) node [right] {\(y\)};
+%             % \draw[thick,->, blue] (0,0,0) -- (0,2,0) node [above] {\(z\)};
+%             % \draw[thick,->, green] (0,0,0) -- (0,0,2) node [left] {\(x\)};
+%             %  \draw[thick, red] (0,0,0) -- (-2,0,0);
+%             % \draw[thick, blue] (0,0,0) -- (0,-2,0);
+%             % \draw[thick,green] (0,0,0) -- (0,0,-2);
+%             \draw[thick] (-0.75,-0.75,0.75) -- (-0.75,-0.75,-0.75) --
+%                 (-0.75,0.75,-0.75) --  (-0.75,0.75,0.75) -- (-0.75,-0.75,0.75);
+%             \draw[thick] (0.75,-0.75,0.75) -- (0.75,-0.75,-0.75) --
+%                 (0.75,0.75,-0.75) --  (0.75,0.75,0.75) -- (0.75,-0.75,0.75);
+%             \draw[thick] (-0.75,-0.75,0.75) -- (0.75,-0.75,0.75);
+%             \draw[thick] (-0.75,-0.75,-0.75) -- (0.75,-0.75,-0.75);
+%             \draw[thick] (-0.75,0.75,0.75) -- (0.75,0.75,0.75);
+%             \draw[thick] (-0.75,0.75,-0.75) -- (0.75,0.75,-0.75);
+%             \draw plot[mark=*, only marks] coordinates {(0,0,0)};
+%             \draw plot[mark=*, only marks] coordinates {(0.75,0.75,0.75)};
+%         \end{tikzpicture}
+%     \end{center}
+% \end{frame}
+
+\begin{frame}{Atividade}
+    Resolva os exercícios 13-11, 13-12 e 13-14
+
+    \textit{Observação:} Um quadrilátero é chamado reverso se, e somente se, não existe plano contendo seus quatros vértices
+
+    \vspace{4cm}
+    \begin{center}
+        \Large{O assunto para a segunda prova termina aqui! \\ (capítulos 9, 11 e 13)}
+    \end{center}
 \end{frame}
