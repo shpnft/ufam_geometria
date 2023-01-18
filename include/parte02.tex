@@ -150,16 +150,16 @@
 \begin{frame}{Exercício 9-5}
     \begin{itemize}
         \item Portanto, \(\vec{AB}\) e \(\vec{AD}\) são arestas de um triângulo equilátero:
-    \begin{center}
-        \begin{tikzpicture}[scale=2]
-            \draw[thick] (0,0) coordinate[label=below:A] (A) --
-                (1,0) coordinate[label=below:B] (B) --
-                ($0.5*(1,0)+0.5*sqrt(3)*(0,1)$) coordinate[label=above:D] (C) --
-                cycle;
-            \draw[red] (0.15,0) arc (0:60:0.15);
-            \node[red,right] at (0.1,0.15) {$60^\circ$};
-        \end{tikzpicture}
-    \end{center}
+            \begin{center}
+                \begin{tikzpicture}[scale=2]
+                    \draw[thick] (0,0) coordinate[label=below:A] (A) --
+                        (1,0) coordinate[label=below:B] (B) --
+                        ($0.5*(1,0)+0.5*sqrt(3)*(0,1)$) coordinate[label=above:D] (C) --
+                        cycle;
+                    \draw[red] (0.15,0) arc (0:60:0.15);
+                    \node[red,right] at (0.1,0.15) {$60^\circ$};
+                \end{tikzpicture}
+            \end{center}
         \item Como a aresta é unitária, temos que
             \(\vec{AB}\cdot\vec{DA}=1 \cdot 1 \cdot \cos{\SI{120}{\degree}}=-1/2\)
     \end{itemize}
@@ -208,8 +208,8 @@
             \(A\), \(B\), \(C\) e \(D\) (\textbf{Relação de Euler})
         \item Se um tetraedro tem dois pares de arestas opostas diagonais, as duas arestas restantes são
             ortogonais
-        % \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
-        %     do triângulo
+            % \item As três retas que contêm as alturas de um triângulo são concorrentes num ponto chamado \textit{ortocentro}
+            %     do triângulo
     \end{itemize}
 
     \centering
@@ -316,7 +316,7 @@
 \section{Produto vetorial}
 
 \begin{frame}{Bases positivas e negativas\footnote{A convenção usada é a mais comum onde bases positivas são
-            bases destras, entretanto não é obrigatória. Ver discussão na página 100 do livro texto}}
+    bases destras, entretanto não é obrigatória. Ver discussão na página 100 do livro texto}}
     \begin{itemize}
         \item Consideremos os vetores \(\vec{OA}\), \(\vec{OB}\) e \(\vec{OC}\) de uma \textbf{base}
             desenhados \textbf{com a mesma origem}
@@ -415,27 +415,6 @@
     \end{itemize}
 \end{frame}
 
-% \begin{frame}{Algumas perguntas...}
-%     \begin{enumerate}[{13-}1]
-%         \item Como você pode reconhecer, pelas coordenadas, que um ponto pertence a um dos eixos coordenados? 
-%             E a um dos planos coordenados?
-%         \item Se o sistema é ortogonal, quais são as coordenadas dos pontos simétricos de \(P=(x,y,z)\) em
-%             relação a cada plano coordenado?
-%         \item Se o sistema é ortogonal, quais são as coordenadas dos pontos simétricos de \(P=(x,y,z)\) em relação a
-%             cada eixo coordenado?
-%         \item Quais são as coordenadas do ponto simétrico de \(P=(x,y,z)\) em relação à origem do sistema?
-%     \end{enumerate}
-%     \begin{tcolorbox}[title="Ponto simétrico"]
-%         \begin{itemize}
-%             \item Dizemos que dois pontos \(A\) e \(A'\) são simétricos em relação a um terceiro
-%         ponto \(O\), quando \(O\) é ponto médio do segmento que une \(A\) e \(A'\)
-
-%     \item Se ao invés de um ponto \(O\) tivermos uma reta ou plano, basta determinar um ponto da reta ou plano
-%         tal que  segmento unindo os pontos \(A\) e \(A'\) seja perpendicular a essa reta ou plano
-%         \end{itemize}
-%     \end{tcolorbox}
-% \end{frame}
-
 \begin{frame}{Qual é o certo?}
     Esse?
     \begin{center}
@@ -462,38 +441,196 @@
     \end{center}
 \end{frame}
 
-% \begin{frame}{Finalmente...}
-%     Se \(P=(x,y,z)\) é um dos vértices de um cubo de centro \(O\) e faces paralelas aos
-%     planos coordenados, escreva as triplas de coordenadas dos outros sete vértices
-%     \begin{center}
-%         \begin{tikzpicture}[scale=2]
-%             % \draw[thick,->, red] (0,0,0) node [above left, black] {O} -- (2,0,0) node [right] {\(y\)};
-%             % \draw[thick,->, blue] (0,0,0) -- (0,2,0) node [above] {\(z\)};
-%             % \draw[thick,->, green] (0,0,0) -- (0,0,2) node [left] {\(x\)};
-%             %  \draw[thick, red] (0,0,0) -- (-2,0,0);
-%             % \draw[thick, blue] (0,0,0) -- (0,-2,0);
-%             % \draw[thick,green] (0,0,0) -- (0,0,-2);
-%             \draw[thick] (-0.75,-0.75,0.75) -- (-0.75,-0.75,-0.75) --
-%                 (-0.75,0.75,-0.75) --  (-0.75,0.75,0.75) -- (-0.75,-0.75,0.75);
-%             \draw[thick] (0.75,-0.75,0.75) -- (0.75,-0.75,-0.75) --
-%                 (0.75,0.75,-0.75) --  (0.75,0.75,0.75) -- (0.75,-0.75,0.75);
-%             \draw[thick] (-0.75,-0.75,0.75) -- (0.75,-0.75,0.75);
-%             \draw[thick] (-0.75,-0.75,-0.75) -- (0.75,-0.75,-0.75);
-%             \draw[thick] (-0.75,0.75,0.75) -- (0.75,0.75,0.75);
-%             \draw[thick] (-0.75,0.75,-0.75) -- (0.75,0.75,-0.75);
-%             \draw plot[mark=*, only marks] coordinates {(0,0,0)};
-%             \draw plot[mark=*, only marks] coordinates {(0.75,0.75,0.75)};
-%         \end{tikzpicture}
-%     \end{center}
+\begin{frame}{Exercício 13-13 letra a e b}
+    Sejam \(A=(-1,0,0)\), \(B=(2,-1,-1)\), \(C=(0,3,1)\) e \(D=(4,5,1)\).
+    \begin{enumerate}[(a)]
+        \item Mostre que esses pontos são vértices de um quadrilátero plano.
+        \item Mostre que o quadrilátero do item (a) é convexo (um quadrilátero
+            plano é convexo se nenhuma das retas que contêm seus lados separa
+            os outros dois vértices, o que equivale a nenhum de seus vértices
+            ser interior ao triângulo determinado pelos outros três). 
+            \alert{Ver exercício 5-5}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Resolução 13-13a}
+    \begin{itemize}
+        \item Temos que \(A=(-1,0,0)\), \(B=(2,-1,-1)\), \(C=(0,3,1)\) e \(D=(4,5,1)\) 
+        \item Vamos montar vetores com a origem em cada ponto:
+            \begin{align*}
+                A \implies &
+                \begin{cases}
+                    \vec{AB}=(2+1,-1-0,-1-0)=(3,-1,-1) \\
+                    \vec{AC}=(0+1,3-0,1-0)=(1,3,1) \\
+                    \vec{AD}=(4+1,5-0,1-0)=(5,5,1)
+                \end{cases} \\
+                B \implies &
+                \begin{cases}
+                    \vec{BC}=(0-2,3+1,1+1)=(-2,4,2) \\
+                    \vec{BD}=(4-2,5+1,1+1)=(2,6,2)
+                \end{cases} \\
+                C \implies & \vec{CD}=(4-0,5-3,1-1)=(4,2,0)
+            \end{align*}
+        \item Para provar que se trata de um quadrilátero, temos que verificar que cada
+            conjunto de 3 pontos não são colineares
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Continuação}
+    \begin{itemize}
+        \item Para verificar que \(ABC\) não são colineares temos que verificar que \(\vec{AB}\) e
+            \(\vec{AC}\) são LI (\textit{apenas um determinante precisa ser diferente de zero}):
+            \[
+                \begin{vmatrix}
+                    3 & -1 \\ 1 & 3
+                \end{vmatrix}
+                = 9+1 = 10 \neq 0
+            \]
+        \item \(ABD\) não são colineares porque \(\vec{AB}\) e \(\vec{AD}\) são LI:
+            \(
+                \begin{vmatrix}
+                    3 & -1 \\ 5 & 5
+                \end{vmatrix}
+                = 15+5 = 20 \neq 0
+            \)
+        \item \(ACD\) não são colineares porque \(\vec{AC}\) e \(\vec{AD}\) são LI:
+            \(
+                \begin{vmatrix}
+                    1 & 3 \\ 5 & 5
+                \end{vmatrix}
+                = 5-15 = -10 \neq 0
+            \)
+        \item \(BCD\) não são colineares porque \(\vec{BC}\) e \(\vec{BD}\) são LI:
+            \(
+                \begin{vmatrix}
+                    -2 & 4 \\ 2 & 6
+                \end{vmatrix}
+                = -12+8 = -4 \neq 0
+            \)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Continuação}
+    \begin{itemize}
+        \item Para verificar que o quadrilátero é plano temos que verificar os pontos \(ABCD\) estão no mesmo plano
+        \item Ou seja, que os vetores \(\vec{AB}\), \(\vec{AC}\) e \(\vec{AD}\) são LD:
+            \[
+                \begin{vmatrix}
+                    3 & -1 & -1 \\
+                    1 & 3 & 1 \\
+                    5 & 5 & 1
+                \end{vmatrix}
+                =9-5-5-(-15+15-1)=0
+            \]
+        \item Assim, concluímos que os pontos \(ABCD\) são os vértices de um quadrilátero plano
+        \item Antes de resolver a letra b do exercício 13-13, precisamos pegar as condições descritas
+            no exercício 5-5:
+            \begin{itemize}
+                \item [5-5] Prove que 
+                    \textcolor{blue}{
+                        \(X\) é um ponto interior ao triângulo de vértices \(A\), \(B\) e \(C\) 
+                        se, e somente se, existem \(\alpha\) e \(\beta\) tais que 
+                        \(\alpha > 0\), \(\beta > 0\), \(\alpha+\beta<1\) e 
+                        \(\vec{CX}=\alpha \vec{CA}+\beta \vec{CB}\)
+                    }. 
+                    (um ponto é \textbf{interior a um triângulo} se é interior a um segmento que tem por extremidade um vértice e um 
+                    ponto interior ao lado oposto.)
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{Resolução \textit{parcial} do exercício 5-5}
+%     \begin{itemize}
+%         \item [5-5] Prove que \(X\) é um ponto interior ao triângulo de vértices
+%             \(A\), \(B\) e \(C\) se, \alert{e somente se}, existem \(\alpha\) e 
+%             \(\beta\) tais que \(\alpha > 0\), \(\beta > 0\), \(\alpha+\beta<1\) e 
+%             \(\vec{CX}=\alpha \vec{CA}+\beta \vec{CB}\). 
+%             (um ponto é \textbf{interior a um triângulo} se é interior a um segmento que tem por extremidade um vértice e um 
+%             ponto interior ao lado oposto.)
+%     \end{itemize}
+%     \begin{columns}[T]
+%         \begin{column}{0.3\textwidth}
+%             \begin{tikzpicture}[scale=1]
+%                 \coordinate (C) at (0,0);
+%                 \coordinate (B) at (1,3);
+%                 \coordinate (A) at (3,0);
+%                 \coordinate (X) at (1,2);
+%                 \draw (A) -- (B) -- (C) -- cycle;
+
+%                 \path [name path=A] (C) -- (B -| A);
+%                 \path [name path=B] (B) -- (A);
+%                 \filldraw [red, name intersections={of=A and B}] (C) -- (intersection-1) circle (1pt) node [above right] {Y};
+%                 \filldraw [red] ($(C)!0.6!(intersection-1)$) circle (1pt) node [below] {X};
+%                 \filldraw (C) circle (1pt) node [below left] {C};
+%                 \filldraw (A) circle (1pt) node [below right] {A};
+%                 \filldraw (B) circle (1pt) node [above] {B};
+%             \end{tikzpicture}
+%         \end{column}
+
+%         \begin{column}{0.6\textwidth}
+%             \begin{itemize}
+%                 \item \(\vec{CX}=\alpha \vec{CA} + \beta \vec{CB} = m \vec{CY}\)
+%                 \item \(\vec{CY}=\vec{CB}+\vec{BY}=\vec{CB}+r \vec{BA}\)
+%                 \item \(\vec{BA}=-\vec{CB}+\vec{CA}\)
+%                 \item \(\vec{CX}=mr (-\vec{CB}+\vec{CA})+m \vec{CB}\)
+%                 \item \(\alpha = mr \quad \beta = m-mr \implies \alpha + \beta = m\)
+%                 \item Para que \(X\) seja interior temos que ter \\ \(m < 1 \) e \(0 < r < 1\)
+%                 \item Ou seja, \(\alpha > 0\) e \(\beta > 0\) e \(\alpha+\beta < 1\)
+%                 \item \alert{Não provaremos a \textit{volta}}
+%             \end{itemize}
+%         \end{column}
+%     \end{columns}
 % \end{frame}
 
+\begin{frame}{Resolução 13-13b}
+    \begin{itemize}
+        \item Temos que um quadrilátero é convexo se \textbf{nenhum} de seus vértices
+            é interior ao triângulo determinado pelos outros três. Assim, \textcolor{blue}{de acordo com o enunciado do exercício 5-5},
+            podemos verificar que o quadrilátero \(ABCD\) é convexo\footnote{\(T \not\to \triangle UVW\) quer dizer 
+                "o ponto \(T\) \textbf{não} é interior ao triângulo formado pelos pontos \(U\), \(V\) e \(W\)"}:
+            \begin{itemize}
+                \item \(
+                    A \not\to \triangle CDB
+                    \implies \vec{BA}=\alpha \vec{BC}+\beta \vec{BD}
+                    \implies (-3,1,1)=\alpha (-2,4,2) + \beta (2,6,2)
+                    \)
+                    \[ \boxed{\alpha = 1 \quad \beta =-1/2  \implies \beta < 0 ~ \color{green!75!black}\checkmark} \]
+                \item \(
+                    B \not\to \triangle CDA
+                    \implies \vec{AB}=\alpha \vec{AC}+\beta \vec{AD}
+                    \implies (3,-1,-1)=\alpha (1,3,1) + \beta (5,5,1)
+                    \)
+                    \[ \boxed{\alpha = -2 \quad \beta =1 \implies \alpha < 0 ~ \color{green!75!black}\checkmark} \]
+                \item \(
+                    C \not\to \triangle BDA
+                    \implies \vec{AC}=\alpha \vec{AB}+\beta \vec{AD}
+                    \implies (1,3,1)=\alpha (3,-1,-1) + \beta (5,5,1)
+                    \)
+                    \[ \boxed{\alpha = -1/2 \quad \beta =1/2 \implies \alpha < 0 ~ \color{green!75!black}\checkmark} \]
+                \item \(
+                    D \not\to \triangle BCA
+                    \implies \vec{AD}=\alpha \vec{AB}+\beta \vec{AC}
+                    \implies (5,5,1)=\alpha (3,-1,-1) + \beta (1,3,1)
+                    \)
+                    \[ \boxed{\alpha = 1 \quad \beta =2 \implies \alpha + \beta = 3 > 1 ~ \color{green!75!black}\checkmark } \]
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
 \begin{frame}{Atividade}
-    Resolva os exercícios 13-11, 13-12 e 13-14
+    \begin{itemize}
+        \item Resolva os exercícios 13-11 e 13-12.
 
-    \textit{Observação:} Um quadrilátero é chamado reverso se, e somente se, não existe plano contendo seus quatros vértices
+            \textit{Observação:} Um quadrilátero é reverso se ele não é plano
+    \end{itemize}
 
-    \vspace{4cm}
+    \vspace{1cm}
     \begin{center}
         \Large{O assunto para a segunda prova termina aqui! \\ (capítulos 9, 11 e 13)}
     \end{center}
+    \vspace{1cm}
+    Lista para a segunda prova: 9-4, 9-5, 9-6, 9-8, 9-11, 9-13, 9-18, 
+    11-14, 11-17, 11-18, 11-19, 11-28, 
+    13-7, 13-8, 13-9 letra a, 13-11, 13-12, 13-13 letra a, 13-13 letra b
 \end{frame}
