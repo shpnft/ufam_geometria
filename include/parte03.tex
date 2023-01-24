@@ -1,0 +1,199 @@
+\begin{frame}{Atividade valendo 70\% da \(N_3\)}
+    \begin{itemize}
+        \item Grupo de no máximo 3 alunos
+        \item Conteúdo
+            \begin{enumerate}
+                \item Elipse: definição, equação reduzida e o que for necessário para a \textbf{resolução do exercício 22-7}
+                \item Hipérbole: definição, equação reduzida e o que for necessário para a \textbf{resolução do exercício 22-21}
+                \item Parábola: definição, equação reduzida e o que for necessário para a \textbf{resolução do exercício 22-32}
+            \end{enumerate}
+        \item Apresentação em vídeo
+            \begin{itemize}
+                \item A imagem dos alunos não precisa aparecer no vídeo:
+                    apenas a voz de um ou mais integrantes do grupo
+                \item Exemplo totalmente amador: o aluno faz a apresentação enquanto segura o celular 
+                    gravando a tela do notebook/folha do papel/quadro/cartolina(?)
+                \item Não é necessário entregar trabalho escrito
+            \end{itemize}
+        \item Data de entrega: 
+            \begin{itemize}
+                \item presencialmente (copiar para meu computador): até 17/2
+                \item via e-mail (link para o Youtube, vídeo não listado ou privado): 24/2
+            \end{itemize}
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Equação \textit{de} reta}
+    \begin{itemize}
+        \item Qualquer vetor não nulo paralelo a uma reta chama-se \textbf{vetor diretor}
+            dessa reta
+        \item Sejam \(\vec{u}\) \textbf{um} vetor diretor de uma reta \(r\) e \(A\)
+            um ponto pertencente a \(r\)
+        \item Um ponto \(X\) pertence a \(r\) se, e somente se, existe um número real \(\lambda\) tal que:
+            \[
+                X=A+\lambda \vec{u}
+            \]
+            chamamos essa equação de \textbf{equação da reta \(r\) na forma vetorial}
+        \item Observações:
+            \begin{itemize}
+                \item todo ponto \(X\) de \(r\) está associado um escalar \(\lambda\)
+                \item há infinitas equações para uma mesma reta
+                \item podemos escrever \(r: X=A+\lambda \vec{u}\) para indicar que estamos 
+                    tratando da equação da reta \(r\)
+                \item a forma vetorial da equação da reta \textit{não precisa de sistema de coordenadas}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Se \(X=(x,y,z)\), \(A=(x_0,y_0,z_0)\) e \(\vec{u}=(a,b,c)\), 
+            podemos reescrever \(X=A+\lambda \vec{u}\) na forma
+            \[
+                \begin{cases}
+                    x = x_0 + \lambda a \\
+                    y = y_0 + \lambda b \\
+                    z = z_0 + \lambda c
+                \end{cases}
+            \]
+        chamamos essas equações de \textbf{equações da reta \(r\) na forma paramétrica}
+    \item Observações:
+        \begin{itemize}
+            \item as formas vetorial e paramétrica são equivalentes
+            \item temos um sistema de equações com infinitas soluções (4 incógnitas e 3 equações): 
+                o conjunto de pontos de \(r\) está associado ao conjunto de soluções desse sistema
+            \item da mesma forma, podemos associar um \alert{sistema de equações} a uma reta
+            \item a forma paramétrica das equações da reta \textit{precisa de sistema de coordenadas}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Finalmente, se \(a \neq 0\), \(b \neq 0 \) e \(c \neq 0\), podemos escrever
+            \[u
+                \frac{x-x_0}{a} = \frac{y-y_0}{b} = \frac{z-z_0}{c}
+            \]
+            chamamos essa equação de \textbf{equação da reta \(r\) na forma simétrica}
+        \item Observações:
+            \begin{itemize}
+                \item a forma simétrica da equação da reta \textit{precisa de sistema de coordenadas}
+                \item lembre-se que há infinitas equações para uma mesma reta e
+                    cada uma delas têm formas vetorial, paramétrica e simétrica diferentes
+                \item as formas da equação da reta são rígidas e devem ser respeitadas, ou seja:
+                    \[
+                        \begin{cases}
+                            2x=1-3\lambda \\ -y = 2+\lambda \\ z=4+2\lambda
+                        \end{cases}
+                        \qquad \text{ e } \qquad
+                        \frac{2x-7}{3} = \frac{y}{2} = \frac{3-z}{4}
+                    \]
+                    são equações da reta mas não estão em nenhuma das 3 formas discutidas
+            \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Cálculo I}
+    Sendo
+    \[
+        \begin{cases}
+            x = x_0 + \lambda a \\
+            y = y_0 + \lambda b \\
+            z = z_0 + \lambda c
+        \end{cases}
+    \]
+
+    Note que se \(c=0\) e \(z_0 = 0\), temos que \(z=0\) e \textit{podemos escrever}:
+    \[
+        \frac{x-x_0}{a} = \frac{y-y_0}{b} \implies y = mx + b'
+    \]
+    uma forma bastante conhecida para quem estuda Cálculo I
+\end{frame}
+
+
+\begin{frame}{Equação do plano}
+    \begin{itemize}
+        \item Se \(\vec{u}\) e \(\vec{v}\) são LI e paralelos a um plano \(\pi\),
+            o par \((\vec{u},\vec{v})\) é chamado \textbf{par de vetores diretores}
+            de \(\pi\) ou simplesmente \textbf{vetores diretores} de \(\pi\)
+        \item Se \(A\) é um ponto do plano \(\pi\), \(X\) pertence a \(\pi\) se,
+            e somente se, \((\vec{u},\vec{v},\vec{AX})\) é LD e, como vimos anteriormente,
+            \[
+                \vec{AX} = \lambda \vec{u} + \mu \vec{v} \implies X = A +\lambda \vec{u} + \mu \vec{v}
+            \]
+            chamamos a segunda equação de \textbf{equação do plano \(\pi\) na forma vetorial}
+        \item Observações:
+            \begin{itemize}
+                \item todo ponto \(X\) de \(\pi\) está associado aos escalares \(\lambda\) e \(\mu\)
+                \item há infinitas equações para um mesmo plano
+                \item podemos escrever \(\pi: X=A+\lambda \vec{u} +\mu \vec{v}\) para indicar que estamos 
+                    tratando da equação do plano \(\pi\)
+                \item a forma vetorial da equação do plano \textit{não precisa de sistema de coordenadas}
+            \end{itemize}
+    \end{itemize}
+
+    \begin{tcolorbox}[colback=magenta!20]
+        Descreva a forma paramétrica das equações do plano sabendo que \(X=(x,y,z)\),
+        \(A=(x_0,y_0,z_0)\), \(\vec{u}=(r,s,t)\) e \(\vec{v}=(m,n,p)\)
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Equação do plano na forma geral}
+    \begin{itemize}
+        \item Vimos que \(A\) e \(X\) pertencem a \(\pi\) se, e somente se, 
+            \((\vec{u},\vec{v},\vec{AX})\) é LD, ou seja:
+            \[
+                \begin{vmatrix}
+                    x-x_0 & y-y_0 & z-z_0 \\
+                    r & s & t \\
+                    m & n & p
+                \end{vmatrix}
+                =0
+            \]
+        \item Resolvendo o determinante, temos
+            \[
+                \begin{vmatrix}
+                    s & t \\ n & p
+                \end{vmatrix}
+                (x-x_0) -
+                \begin{vmatrix}
+                    r & t \\ m & p
+                \end{vmatrix}
+                (y-y_0) +
+                \begin{vmatrix}
+                    r & s \\ m & n
+                \end{vmatrix}
+                (z-z_0) =0 \implies ax+ by +cz + d=0
+            \]
+            % onde
+            % \[
+            %     \begin{vmatrix}
+            %         s & t \\ n & p
+            %     \end{vmatrix}
+            %     =a \quad
+            %     \begin{vmatrix}
+            %         r & t \\ m & p
+            %     \end{vmatrix}
+            %     =b \quad
+            %     \begin{vmatrix}
+            %         r & s \\ m & n
+            %     \end{vmatrix}
+            %     =c \quad
+            %     -ax_0- by_0 -cz_0 = d
+            % \]
+        \item a equação \(ax+ by +cz + d=0\) é chamada \textbf{equação do plano na forma geral}
+        \item \textit{Toda equação de primeiro grau é equação de um plano}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Atividade}
+    \begin{itemize}
+        \item Exercícios 14-1 até 14-7
+        \item Exercícios 14-20 até 14-23
+        \item Exercícios 14-28 ate 14-30
+    \end{itemize}
+\end{frame}
+
