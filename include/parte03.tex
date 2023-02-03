@@ -316,3 +316,43 @@
 \begin{frame}{Atividade}
     Resolva os exercícios 14-3, 14-23 e 14-30
 \end{frame}
+
+\begin{frame}[c]{Distância entre pontos, retas e planos}
+    \begin{itemize}
+        \item Se \(M\) e \(P\) são pontos, retas ou planos, a distância \(d(M,P)\) é
+            o menor dos números \(d(X,Y)\), onde \(X\) ''pertence'' a \(M\) e 
+            \(Y\) ''pertence'' a \(P\)
+        \item Se há pontos comuns entre \(M\) e \(P\), temos que \(d(M,P)=0\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Distância entre pontos, retas e planos}
+    \begin{tcolorbox}[colback=magenta!10]
+        Para obtermos a distância entre os pontos \(A=(x_1,y_1,z_1)\) e \(B=(x_2,y_2,z_2)\), 
+        calculamos
+        \[
+            d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1) ^2}
+        \]
+    \end{tcolorbox}
+    \pause
+    \begin{tcolorbox}[colback=blue!10]
+        Para obtermos a distância entre um ponto \(P\) e uma reta \(r\), primeiro
+        encontramos dois pontos, \(A\) e \(B\), pertencentes a \(r\) e calculamos:
+        \[
+            d(P,r) = \frac{||\vec{AP}\wedge \vec{AB}||}{||\vec{AB}||}
+        \]
+    \end{tcolorbox}
+    \pause
+    \begin{tcolorbox}[colback=green!10]
+        Para obtermos a distância entrem um ponto \(P=(x_0,y_0,z_0)\) e um 
+        plano \(\pi: ax+by+cz+d=0\) usamos a fórmula:
+        \[
+        \displaystyle d(P,\pi) = \frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}
+    \]
+    \end{tcolorbox}
+    \vspace{-3pt} %gambiarra
+\end{frame}
+
+\begin{frame}{Atividade}
+    Exercícios 20-8, 20-10 e 20-21
+\end{frame}
