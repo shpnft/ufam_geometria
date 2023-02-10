@@ -1,0 +1,145 @@
+\documentclass[brazilian, fleqn]{article}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsfonts,amsmath}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections}
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\tg}{tg}
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+
+\usepackage[left=2cm, bottom=2cm, right=1.5cm, top=1.5cm]{geometry}
+
+\usepackage{siunitx}
+\sisetup{locale = FR}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbset{boxrule=0pt, top=0pt, bottom=0pt, skin=bicolor, interior style={left color=black!10}}
+
+\usepackage{enumitem}
+
+\begin{document}
+\section*{\centering Gabarito da prova ímpar}
+
+\begin{enumerate}
+    \item Os vetores não-nulos \(\vec{u}\) e \(\vec{v}\) são ortogonais, sendo \(||\vec{u}||=\tg{(\SI{60}{\degree})} ||\vec{v}||\), e
+        \(\vec{w}\) é gerado por eles. Sabendo que \(\vec{w} \cdot \vec{u} = \vec{w} \cdot \vec{v} \) e que \(\vec{w}\)
+        não é nulo, obtenha as medidas angulares, em graus, entre \(\vec{u}\) e \(\vec{w}\) e entre \(\vec{v}\) e
+        \(\vec{w}\)
+
+        \begin{tcolorbox}
+
+            \begin{minipage}{0.45\textwidth}
+                \begin{itemize}
+                    \item Temos que
+                        \[
+                            \tg{\theta} = \frac{|\beta| ||\vec{v}||}{|\alpha| ||\vec{u}||}
+                        \]
+
+                    \item Considerando \(\phi\) a medida angular entre \(\vec{u}\) e \(\vec{w}\) e
+                        \(\gamma\) a medida angular entre \(\vec{v}\) e \(\vec{w}\), temos as seguintes possibilidades:
+                        \begin{itemize}[label={$\rightarrow$}]
+                            \item \(\alpha > 0\): \(\phi = \theta\)
+                            \item \(\alpha < 0\): \(\phi = \SI{180}{\degree} - \theta\)
+                            \item \(\beta > 0\): \(\gamma = \SI{90}{\degree}-\theta\)
+                            \item \(\beta < 0\): \(\gamma = \SI{90}{\degree} + \theta\)
+                        \end{itemize}
+                \end{itemize}
+            \end{minipage}
+            %
+            \begin{minipage}{0.45\textwidth}
+                \begin{center}
+                    \begin{tikzpicture}
+                        \draw [blue,->] (0,0) -- (5,0) node [midway, below] {$\alpha \vec{u}$};
+                        \draw [red,->] (0,0) -- (0,4) node [midway, left] {$\beta \vec{v}$};
+                        \draw [dashed,red,->] (5,0) -- (5,4);
+                        \draw [green!50!black,->] (0,0) -- (5,4) node [midway, sloped, above] {$\vec{w}=\alpha \vec{u}+ \beta \vec{v}$};
+                        \draw (0.5,0) arc (0:atan2(4,5):0.5) node [midway, right] {$\theta$};
+                    \end{tikzpicture}
+                \end{center}
+            \end{minipage}
+
+            \begin{itemize}
+                \item Além disso, como \(\vec{u}\) e \(\vec{v}\) são ortogonais, temos que
+                    \(\vec{w} \cdot \vec{u} = \alpha \vec{u} \cdot \vec{u} = \alpha ||\vec{u}||^2\) e
+                    \(\vec{w} \cdot \vec{v} = \beta \vec{v} \cdot \vec{v} = \beta ||\vec{v}||^2\)
+                \item Ou seja:
+                    \[
+                        \frac{|\vec{w} \cdot \vec{v}|}{|\vec{w} \cdot \vec{u}|}=
+                        \frac{|\beta|||\vec{v}||^2}{|\alpha| ||\vec{u}||^2}=
+                        \frac{||\vec{v}||}{||\vec{u}||}\tg {\theta} \implies
+                        \tg{\theta} =
+                        \frac{|\vec{w} \cdot \vec{v}|}{|\vec{w} \cdot \vec{u}|}
+                        \frac{||\vec{u}||}{||\vec{v}||}
+                    \]
+                \item Do enunciado temos que \(\vec{w} \cdot \vec{u} = \vec{w} \cdot \vec{v}\),
+                    que implica que \(\alpha\) e \(\beta\) têm o mesmo sinal (ambos positivos ou ambos negativos)
+                    e que
+                    \[
+                        \tg {\theta} = \tg{\SI{60}{\degree}} \implies \theta = \SI{60}{\degree}
+                    \]
+                    onde usamos o fato de que \(0 < \theta < \SI{90}{\degree}\), decorrente de que \(\alpha\) e \(\beta\) não são nulos
+                \item Assim, finalmente, temos que \(\phi=\SI{60}{\degree}\) e \(\gamma=\SI{30}{\degree}\) ou
+                    \(\phi=\SI{120}{\degree}\) e \(\gamma=\SI{150}{\degree}\)
+
+            \end{itemize}
+        \end{tcolorbox}
+
+    \item Sejam \(\vec{u}=(0,0,1)_B\) e \(\vec{v}=(1,2,0)_B\), onde \(B\) é uma base ortonormal positiva. Obtenha uma base
+        ortonormal positiva \((\vec{a}, \vec{b}, \vec{c})\) tal que:
+        \begin{itemize}
+            \item \(\vec{a}\) e \(\vec{u}\) sejam de mesmo sentido;
+            \item \(\vec{b}\) seja combinação linear de \(\vec{u}\), \(\vec{v}\);
+            \item a primeira coordenada de \(\vec{b}\) seja positiva.
+        \end{itemize}
+
+        \begin{tcolorbox}
+            \begin{itemize}
+                \item Como \(\vec{a}=\alpha \vec{u}=(0,0,\alpha)_B\) e \(\vec{a}\) é unitário, temos que
+                    \(\alpha = 1 \implies \vec{a}=(0,0,1)_B\)
+                \item Temos que \(\vec{b}=\beta \vec{u} + \gamma \vec{v} = (\gamma, 2\gamma, \beta)_B\)
+                \item Como queremos uma base ortonormal, temos que \(\vec{a}\cdot \vec{b} = 0 \implies \beta = 0\)
+                \item Como \(\vec{b}\) é unitário, temos que \(\sqrt{\gamma^2+4\gamma^2}=1 \implies \gamma = \pm 1/\sqrt{5}\)
+                \item Como a primeira coordenada de \(\vec{b}\) é positiva, temos que \(\vec{b} = (1,2,0)_B /\sqrt{5}\)
+                \item Temos que \(\vec{c} = \vec{a} \wedge \vec{b}\), ou seja
+                    \[
+                        \vec{c} =
+                        \begin{vmatrix}
+                            \vec{i} & \vec{j} & \vec{k} \\
+                            0 & 0 & 1 \\
+                            1/\sqrt{5} & 2/\sqrt{5} & 0
+                        \end{vmatrix}= 1/\sqrt{5} \vec{j}-2/\sqrt{5} \vec{i} \implies \vec{c} = (-2, 1, 0)_B /\sqrt{5}
+                    \]
+                    onde consideramos \(B=(\vec{i},\vec{j},\vec{k})\)
+            \end{itemize}
+        \end{tcolorbox}
+
+    \item Em relação a um sistema ortogonal de coordenadas, \(A=(1,2,-1)\), \(B=(0,1,-2)\) e \(C=(2,0,0)\).
+        Verifique se \(A\), \(B\) e \(C\) são vértices de um triângulo retângulo
+
+        \begin{tcolorbox}
+            \begin{itemize}
+                \item Temos que \(\vec{AB}=(-1,-1,-1)\) e \(\vec{AC}=(1,-2,1)\)
+                \item Como não existe \(\alpha\) tal que \(\vec{AB} = \alpha \vec{AC}\),
+                    pois implicaria que \(\alpha = 2\alpha\) com \(\alpha \neq 0\), os
+                    pontos \(A\), \(B\) e \(C\) não são colineares e portanto podem ser
+                    vértices de um triângulo
+                \item O teorema de Pitágoras diz que \(\text{(hipotenusa)}^2=\text{(cateto 1)}^2+\text{(cateto 2)}^2\). Como
+                    \begin{align*}
+                        ||\vec{AB}|| &=\sqrt{1+1+1}=\sqrt{3} \\
+                        ||\vec{AC}|| &=\sqrt{1+4+1}=\sqrt{6} \\
+                        ||\vec{BC}|| &=\sqrt{(2-0)^2+(0-1)^2+(0+2)^2}=3
+                    \end{align*}
+                    podemos verificar que \(||\vec{BC}||^2=||\vec{AB}||^2+||\vec{AC}||^2\) e confirmar que \(A\), \(B\) e
+                    \(C\) podem ser vértices de um triângulo retângulo
+            \end{itemize}
+        \end{tcolorbox}
+\end{enumerate}
+\end{document}
